@@ -1,11 +1,7 @@
-'use client';
-
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import AOSInitializer from './AOSInitializer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -122,15 +118,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-function AOSInitializer() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      mirror: false
-    });
-  }, []);
-  return null;
 }

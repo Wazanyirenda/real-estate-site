@@ -1,1 +1,0 @@
-do not change the theme colors of the site and maintain the same design style unless i specifically tell you which one to change or you get claity by asking exactly what to cahnge, eg when i say change the icons.

@@ -9,12 +9,12 @@ export default function ContactInfo() {
       address: 'No. 7 Chinika Road, Northrise',
       phone: '+260 761 370 566',
       email: 'info@calmountainproperties.com',
-      icon: 'ri-building-line'
+      icon: 'ri-map-pin-line'
     },
     {
       city: 'Kabwe',
       title: 'Kabwe Office',
-      address: 'No. 204-214a Lusito Street, Kabwe',
+      address: 'No. 204-214a Lusito Street',
       phone: '+260 761 370 566 / +260 962 453 695',
       email: 'info@calmountainproperties.com',
       icon: 'ri-map-pin-line'
@@ -25,7 +25,7 @@ export default function ContactInfo() {
       address: 'No. 115 Luela Rd, off Cent street Nkana East',
       phone: '+260 761 370 566 / +260 768 935 521',
       email: 'info@calmountainproperties.com',
-      icon: 'ri-phone-line'
+      icon: 'ri-map-pin-line'
     }
   ];
 

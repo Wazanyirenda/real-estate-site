@@ -9,6 +9,6 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function EstatePage({ params }: { params: { slug: string } }) {
+export default async function EstatePage({ params }: { params: { slug: string } }) {
   return <EstateDetail estateSlug={params.slug} />;
 }

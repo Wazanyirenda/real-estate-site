@@ -112,11 +112,11 @@ export default function Footer() {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center space-x-2">
                 <i className="ri-map-pin-line text-[#f7b733]"></i>
-                <span>Lusaka, Zambia</span>
+                <span>No. 7 Chinika Road, Northrise, Ndola, Zambia</span>
               </div>
               <div className="flex items-center space-x-2">
                 <i className="ri-phone-line text-[#f7b733]"></i>
-                <span>+260 977 123 456</span>
+                <span>+260 761 370 566</span>
               </div>
               <div className="flex items-center space-x-2">
                 <i className="ri-mail-line text-[#f7b733]"></i>
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 Calm Mountain Properties. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Calm Mountain Properties. All rights reserved.</p>
         </div>
       </div>
     </footer>

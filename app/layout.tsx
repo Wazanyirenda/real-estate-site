@@ -2,6 +2,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -113,8 +116,20 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className} suppressHydrationWarning={true}>
+        <AOSInitializer />
         {children}
       </body>
     </html>
   );
+}
+
+function AOSInitializer() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      mirror: false
+    });
+  }, []);
+  return null;
 }

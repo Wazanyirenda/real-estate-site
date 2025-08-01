@@ -17,13 +17,13 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <HeroSection />
-        <AboutPreview />
-        <ServicesPreview />
-        <FeaturedListings />
-        <TrustSection />
-        <TestimonialsSection />
-        <CTASection />
+        <HeroSection data-aos="fade-up" />
+        <AboutPreview data-aos="fade-up" data-aos-delay="100" />
+        <ServicesPreview data-aos="fade-up" data-aos-delay="200" />
+        <FeaturedListings data-aos="fade-up" data-aos-delay="300" />
+        <TrustSection data-aos="fade-up" data-aos-delay="400" />
+        <TestimonialsSection data-aos="fade-up" data-aos-delay="500" />
+        <CTASection data-aos="fade-up" data-aos-delay="600" />
       </main>
       <Footer />
       <WhatsAppButton />

@@ -1,18 +1,16 @@
 'use client';
 
 export default function WhatsAppButton() {
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/260977123456', '_blank');
-  };
-
   return (
-    <div className="fixed bottom-6 right-6 z-50">
-      <button
-        onClick={handleWhatsAppClick}
-        className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
-      >
-        <i className="ri-whatsapp-fill text-2xl"></i>
-      </button>
-    </div>
+    <a
+      href="https://wa.me/260761370566"
+      className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 cursor-pointer z-50 flex items-center justify-center"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on WhatsApp"
+      style={{ width: '60px', height: '60px' }} // Perfect circle size
+    >
+      <i className="ri-whatsapp-line text-3xl"></i>
+    </a>
   );
 }

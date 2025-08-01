@@ -9,6 +9,7 @@ export async function generateStaticParams() {
   ];
 }
 
-export default async function EstatePage({ params }: { params: { slug: string } }) {
-  return <EstateDetail estateSlug={params.slug} />;
+export default async function EstatePage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  return <EstateDetail estateSlug={resolvedParams.slug} />;
 }

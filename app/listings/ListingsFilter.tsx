@@ -1,18 +1,20 @@
 'use client';
 
+interface Filters {
+  location: string;
+  priceRange: string;
+  plotSize: string;
+  paymentPlan: string;
+}
+
 interface FiltersProps {
-  filters: {
-    location: string;
-    priceRange: string;
-    plotSize: string;
-    paymentPlan: string;
-  };
-  setFilters: (filters: any) => void;
+  filters: Filters;
+  setFilters: React.Dispatch<React.SetStateAction<Filters>>;
 }
 
 export default function ListingsFilter({ filters, setFilters }: FiltersProps) {
   const handleFilterChange = (key: string, value: string) => {
-    setFilters(prev => ({ ...prev, [key]: value }));
+    setFilters((prev: Filters) => ({ ...prev, [key]: value }));
   };
 
   const clearFilters = () => {

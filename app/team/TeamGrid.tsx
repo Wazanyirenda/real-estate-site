@@ -3,22 +3,22 @@
 export default function TeamGrid() {
   const teamMembers = [
     {
-      name: 'David Mwamba',
+      name: 'Kathy Kapalakasha',
       position: 'Managing Director',
       department: 'Executive',
       image: '/images/team/david-mwamba.jpg', // TODO: Add professional photo of MD David Mwamba
-      bio: 'David leads our company with over 15 years of experience in Zambian real estate development and property management.',
+      bio: 'Kathy leads our company with over 15 years of experience in Zambian real estate development and property management.',
       phone: '+260 97 123 4567',
-      email: 'david.mwamba@calmmountain.com'
+      email: 'md@calmmountainproperties.com'
     },
     {
-      name: 'Grace Phiri',
+      name: 'name name',
       position: 'Sales Lead',
       department: 'Sales',
       image: '/images/team/grace-phiri.jpg', // TODO: Add professional photo of Sales Lead Grace Phiri
-      bio: 'Grace leads our sales efforts and has helped hundreds of clients find their perfect plots across our estates.',
+      bio: 'Name leads our sales efforts and has helped hundreds of clients find their perfect plots across our estates.',
       phone: '+260 97 234 5678',
-      email: 'grace.phiri@calmmountain.com'
+      email: 'name@calmmountainproperties.com'
     }
   ];
 

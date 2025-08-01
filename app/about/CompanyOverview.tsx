@@ -11,7 +11,7 @@ export default function CompanyOverview() {
               Calm Mountain is a reputable property developer and real estate agency with branches in Ndola and Kitwe. We pride ourselves on providing top-notch real estate services to individuals and businesses looking to buy, sell, or rent properties within and outside the region.
             </p>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Our main goal is to provide easy access to land for the Zambian people and ensure the proper management of properties in the country. As the sun arcs across the savannah, we stand sentinel—guardians of dreams, stewards of prosperity, making land ownership accessible to every family.
+              Our main goal is to provide easy access to land for the Zambian people and ensure the proper management of properties in the country. As the sun arcs across the savannah, we stand sentinel, guardians of dreams, stewards of prosperity, making land ownership accessible to every family.
             </p>
             {/* Removed stats badges per request */}
           </div>

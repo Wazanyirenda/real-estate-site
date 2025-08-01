@@ -6,8 +6,8 @@ export default function TeamGrid() {
       name: 'Kathy Kapalakasha',
       position: 'Managing Director',
       department: 'Executive',
-      image: '/images/team/david-mwamba.jpg', // TODO: Add professional photo of MD David Mwamba
-      bio: 'Kathy leads our company with over 15 years of experience in Zambian real estate development and property management.',
+      image: '/images/team/david-mwamba.jpg', // DO: Add professional photo of MD David Mwamba
+      bio: 'Kathy leads our company with over 4 years of experience in Zambian real estate development and property management.',
       phone: '+260 97 123 4567',
       email: 'md@calmmountainproperties.com'
     },

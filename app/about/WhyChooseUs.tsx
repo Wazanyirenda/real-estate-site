@@ -10,17 +10,17 @@ export default function WhyChooseUs() {
     {
       icon: 'ri-map-pin-line',
       title: 'Prime Growth Areas',
-      description: 'We only develop in Zambia\'s fastest-growing cities near airports and major roads - your investment grows with the city.'
+      description: 'We only develop in Zambia\'s fastest-growing cities near airports and major roads. Your investment grows with the city.',
     },
     {
       icon: 'ri-customer-service-line',
       title: '24/7 Customer Support',
-      description: 'Real people, real support. Our team guides you from first visit to key handover - never deal with automated systems.'
+      description: 'Real people, real support. Our team guides you from first visit to key handover. Never deal with automated systems.',
     },
     {
       icon: 'ri-tools-line',
       title: 'Everything Under One Roof',
-      description: 'Surveying, documentation, construction planning - we handle it all so you don\'t have to chase multiple companies.'
+      description: 'Surveying, documentation, construction planning. We handle it all so you don\'t have to chase multiple companies.',
     },
     {
       icon: 'ri-price-tag-line',

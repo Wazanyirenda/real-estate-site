@@ -11,15 +11,15 @@ export default function ProjectsGrid() {
       image: 'https://readdy.ai/api/search-image?query=Completed%20modern%20residential%20complex%20in%20Kabwe%20Zambia%20with%20multiple%20housing%20units%2C%20contemporary%20African%20architecture%2C%20well-landscaped%20compound%2C%20paved%20driveways%2C%20professional%20construction%20quality%2C%20beautiful%20exterior%20finishes&width=500&height=300&seq=project-001&orientation=landscape',
       features: ['24 Residential Units', 'Modern Design', 'Premium Finishes', 'Landscaped Compound']
     },
-    {
-      id: 'commercial-plaza-kitwe',
-      title: 'Commercial Plaza - Kitwe',
-      location: 'Nkana East',
-      status: 'In Progress',
-      description: 'Multi-purpose commercial plaza with retail spaces, offices, and modern amenities.',
-      image: 'https://readdy.ai/api/search-image?query=Commercial%20plaza%20construction%20in%20Kitwe%20Zambia%20showing%20modern%20building%20with%20retail%20spaces%2C%20construction%20in%20progress%2C%20contemporary%20commercial%20architecture%2C%20professional%20development%2C%20urban%20commercial%20property&width=500&height=300&seq=project-002&orientation=landscape',
-      features: ['Retail Spaces', 'Office Complex', 'Modern Amenities', 'Prime Location']
-    },
+    // {
+    //   id: 'commercial-plaza-kitwe',
+    //   title: 'Commercial Plaza - Kitwe',
+    //   location: 'Nkana East',
+    //   status: 'In Progress',
+    //   description: 'Multi-purpose commercial plaza with retail spaces, offices, and modern amenities.',
+    //   image: 'https://readdy.ai/api/search-image?query=Commercial%20plaza%20construction%20in%20Kitwe%20Zambia%20showing%20modern%20building%20with%20retail%20spaces%2C%20construction%20in%20progress%2C%20contemporary%20commercial%20architecture%2C%20professional%20development%2C%20urban%20commercial%20property&width=500&height=300&seq=project-002&orientation=landscape',
+    //   features: ['Retail Spaces', 'Office Complex', 'Modern Amenities', 'Prime Location']
+    // },
     {
       id: 'housing-development-ndola',
       title: 'Housing Development - Ndola',

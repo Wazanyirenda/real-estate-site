@@ -129,7 +129,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
           <p>&copy; {new Date().getFullYear()} Calm Mountain Properties. All rights reserved.</p>
           <p className="mt-2 text-sm">
-            Created by <a href="https://wazama.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:underline">wazama</a>
+            Created by <a href="https://wazama.vercel.app" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:underline">Wazama</a>
           </p>
         </div>
       </div>

@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function WhyChooseUs() {
   const reasons = [
     {
@@ -34,27 +36,70 @@ export default function WhyChooseUs() {
     }
   ];
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 },
+    viewport: { once: true, amount: 0.1 }
+  };
+
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true, amount: 0.1 },
+    transition: { staggerChildren: 0.15, delayChildren: 0.3 }
+  };
+
+  const staggerItem = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
   return (
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">What Makes Us Different</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <motion.div className="text-center mb-16" {...fadeInUp}>
+          <motion.h2 
+            className="text-4xl font-bold text-[#0a192f] mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            What Makes Us Different
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Unlike other developers, we put your peace of mind first. Here's what every client gets when they choose us:
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+        >
           {reasons.map((reason, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer">
+            <motion.div 
+              key={index} 
+              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              variants={staggerItem}
+            >
               <div className="w-16 h-16 bg-[#f7b733] rounded-full flex items-center justify-center mb-6">
                 <i className={`${reason.icon} text-2xl text-white`}></i>
               </div>
               <h3 className="text-xl font-bold text-[#0a192f] mb-4">{reason.title}</h3>
               <p className="text-gray-600 leading-relaxed">{reason.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

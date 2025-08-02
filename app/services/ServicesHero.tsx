@@ -1,6 +1,19 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function ServicesHero() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 }
+  };
+
+  const fadeInUpDelay = {
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay: 0.1 }
+  };
   return (
     <section 
       className="relative h-[60vh] flex items-center justify-center"
@@ -12,8 +25,18 @@ export default function ServicesHero() {
       }}
     >
       <div className="text-center text-white max-w-4xl px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
-        <p className="text-xl md:text-2xl font-light">Comprehensive real estate solutions for all your property needs</p>
+        <motion.h1 
+          className="text-5xl md:text-6xl font-bold mb-6"
+          {...fadeInUp}
+        >
+          Our Services
+        </motion.h1>
+        <motion.p 
+          className="text-xl md:text-2xl font-light"
+          {...fadeInUpDelay}
+        >
+          Comprehensive real estate solutions for all your property needs
+        </motion.p>
       </div>
     </section>
   );

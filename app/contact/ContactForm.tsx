@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -73,18 +74,51 @@ export default function ContactForm() {
     }
   };
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 },
+    viewport: { once: true, amount: 0.1 }
+  };
+
+  const fadeInRight = {
+    initial: { opacity: 0, x: 60 },
+    whileInView: { opacity: 1, x: 0 },
+    transition: { duration: 0.8 },
+    viewport: { once: true, amount: 0.1 }
+  };
+
   return (
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Send Us a Message</h2>
-            <p className="text-xl text-gray-600">
+          <motion.div className="text-center mb-12" {...fadeInUp}>
+            <motion.h2
+              className="text-4xl font-bold text-[#0a192f] mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Send Us a Message
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-600"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               Fill out the form below and we'll get back to you as soon as possible
-            </p>
-          </div>
-          
-          <form id="contact-form" onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
+            </motion.p>
+          </motion.div>
+
+          <motion.form
+            id="contact-form"
+            onSubmit={handleSubmit}
+            className="bg-white p-8 rounded-lg shadow-lg"
+            {...fadeInRight}
+          >
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -125,7 +159,7 @@ export default function ContactForm() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
                 <div className="relative">
-                  <button 
+                  <button
                     type="button"
                     className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left cursor-pointer hover:border-[#f7b733] transition-colors pr-8"
                     onClick={() => {
@@ -139,7 +173,7 @@ export default function ContactForm() {
                   <div id="subject-dropdown" className="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg">
                     <div className="py-2">
                       {['General Inquiry', 'Plot Purchase', 'Site Visit Request', 'Title Processing', 'Construction Services', 'Other'].map(subject => (
-                        <div 
+                        <div
                           key={subject}
                           className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                           onClick={() => {
@@ -160,7 +194,7 @@ export default function ContactForm() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Interested Estate</label>
                 <div className="relative">
-                  <button 
+                  <button
                     type="button"
                     className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left cursor-pointer hover:border-[#f7b733] transition-colors pr-8"
                     onClick={() => {
@@ -174,7 +208,7 @@ export default function ContactForm() {
                   <div id="estate-dropdown" className="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg">
                     <div className="py-2">
                       {['', 'Great North Estate - Kabwe', 'Paramount Estate - Kitwe', 'Dreamscape Housing - Ndola', 'Fatima Estate - Ndola'].map(estate => (
-                        <div 
+                        <div
                           key={estate}
                           className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                           onClick={() => {
@@ -192,7 +226,7 @@ export default function ContactForm() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Plot Size</label>
                 <div className="relative">
-                  <button 
+                  <button
                     type="button"
                     className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left cursor-pointer hover:border-[#f7b733] transition-colors pr-8"
                     onClick={() => {
@@ -206,7 +240,7 @@ export default function ContactForm() {
                   <div id="plotsize-dropdown" className="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg">
                     <div className="py-2">
                       {['', '30x20', '32x25', '40x20', '40x30'].map(size => (
-                        <div 
+                        <div
                           key={size}
                           className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                           onClick={() => {
@@ -253,7 +287,7 @@ export default function ContactForm() {
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function TestimonialsSection() {
   const testimonials = [
     {
@@ -13,7 +15,7 @@ export default function TestimonialsSection() {
       name: 'Grace Tembo',
       location: 'Paramount Estate, Kitwe',
       image: 'https://readdy.ai/api/search-image?query=Professional%20African%20businesswoman%20in%20her%2030s%2C%20warm%20smile%2C%20professional%20attire%2C%20modern%20office%20setting%2C%20successful%20property%20owner%2C%20confident%20appearance%2C%20friendly%20expression&width=80&height=80&seq=testimonial-002&orientation=squarish',
-      text: 'The flexible payment plan allowed me to invest in my dream plot without financial strain. The location is perfect - close to all amenities and well-connected. Highly recommended!',
+      text: 'The flexible payment plan allowed me to invest in my dream plot without financial strain. The location is perfect, close to all amenities and well-connected. Highly recommended!',
       rating: 5
     },
     {
@@ -25,21 +27,62 @@ export default function TestimonialsSection() {
     }
   ];
 
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 },
+    viewport: { once: true, amount: 0.1 }
+  };
+
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true, amount: 0.1 },
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+  };
+
+  const staggerItem = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
   return (
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-4">
+        <motion.div className="text-center mb-16" {...fadeInUp}>
+          <motion.h2 
+            className="text-4xl font-bold text-[#0a192f] mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             What Our Clients Say
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Real stories from real people who found their perfect plot and peace of mind with Calm Mountain Properties.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+        >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <motion.div 
+              key={index} 
+              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              variants={staggerItem}
+            >
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <i key={i} className="ri-star-fill text-[#f7b733] text-lg"></i>
@@ -59,9 +102,9 @@ export default function TestimonialsSection() {
                   <p className="text-sm text-gray-600">{testimonial.location}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

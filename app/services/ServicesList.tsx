@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function ServicesList() {
   const services = [
@@ -9,51 +10,94 @@ export default function ServicesList() {
       title: 'Plot Sales',
       description: 'Premium residential plots in prime locations across Zambia with flexible payment plans.',
       features: ['Titled and beaconed plots', 'Various sizes available', 'Flexible payment terms', 'Prime locations'],
-      image: 'https://readdy.ai/api/search-image?query=Beautiful%20residential%20plot%20with%20survey%20markers%20and%20beacons%2C%20well-defined%20boundaries%2C%20green%20grass%2C%20trees%2C%20clear%20sky%2C%20zambian%20residential%20development%20area%20with%20proper%20infrastructure&width=400&height=300&seq=plot-sales&orientation=landscape'
+      // TODO: Add downloaded image for Plot Sales (e.g., beautiful residential plot with survey markers, 400x300 landscape)
     },
     {
       icon: 'ri-building-line',
       title: 'Estate Planning',
       description: 'Comprehensive estate development planning and infrastructure design services.',
       features: ['Master planning', 'Infrastructure design', 'Zoning analysis', 'Development permits'],
-      image: 'https://readdy.ai/api/search-image?query=Architectural%20blueprints%20and%20estate%20development%20plans%20spread%20on%20table%2C%20urban%20planning%20documents%2C%20measuring%20tools%2C%20professional%20planning%20workspace%2C%20modern%20estate%20design%20drawings&width=400&height=300&seq=estate-planning&orientation=landscape'
+      // TODO: Add downloaded image for Estate Planning (e.g., architectural blueprints on table, 400x300 landscape)
     },
     {
       icon: 'ri-file-text-line',
       title: 'Title Processing',
       description: 'Fast and reliable title deed processing and documentation services.',
       features: ['Title deed processing', 'Legal documentation', 'Property registration', 'Compliance verification'],
-      image: 'https://readdy.ai/api/search-image?query=Legal%20documents%20and%20title%20deeds%20on%20desk%2C%20official%20property%20papers%2C%20rubber%20stamps%2C%20professional%20legal%20office%20setting%2C%20zambian%20property%20documentation%20process&width=400&height=300&seq=title-processing&orientation=landscape'
+      // TODO: Add downloaded image for Title Processing (e.g., legal documents on desk, 400x300 landscape)
     },
     {
       icon: 'ri-tools-line',
       title: 'Construction Supervision',
       description: 'Professional construction supervision and project management services.',
       features: ['Project management', 'Quality control', 'Timeline management', 'Budget oversight'],
-      image: 'https://readdy.ai/api/search-image?query=Construction%20supervisor%20with%20hard%20hat%20reviewing%20building%20plans%20on%20construction%20site%2C%20construction%20workers%20in%20background%2C%20modern%20residential%20construction%20project%2C%20professional%20supervision&width=400&height=300&seq=construction-supervision&orientation=landscape'
+      // TODO: Add downloaded image for Construction Supervision (e.g., supervisor on construction site, 400x300 landscape)
     },
     {
       icon: 'ri-compass-3-line',
       title: 'Land Surveying',
       description: 'Accurate land surveying and mapping services for property development.',
       features: ['Topographic surveys', 'Boundary surveys', 'Construction surveys', 'GPS mapping'],
-      image: 'https://readdy.ai/api/search-image?query=Professional%20land%20surveyor%20using%20theodolite%20and%20GPS%20equipment%2C%20surveying%20instruments%20on%20tripod%2C%20open%20field%20with%20survey%20markers%2C%20technical%20surveying%20work%20in%20zambian%20landscape&width=400&height=300&seq=land-surveying&orientation=landscape'
+      // TODO: Add downloaded image for Land Surveying (e.g., surveyor using equipment in field, 400x300 landscape)
     }
   ];
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 },
+    viewport: { once: true, amount: 0.1 }
+  };
+
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true, amount: 0.1 },
+    transition: { staggerChildren: 0.3, delayChildren: 0.3 }
+  };
+
+  const staggerItem = {
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 }
+  };
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">What We Offer</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <motion.div className="text-center mb-16" {...fadeInUp}>
+          <motion.h2 
+            className="text-4xl font-bold text-[#0a192f] mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            What We Offer
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Complete real estate solutions from plot sales to construction supervision
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
-        <div className="space-y-16">
+        <motion.div 
+          className="space-y-16"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+        >
           {services.map((service, index) => (
-            <div key={index} className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+            <motion.div 
+              key={index} 
+              className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              variants={staggerItem}
+            >
               <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                 <div className="w-16 h-16 bg-[#f7b733] rounded-full flex items-center justify-center mb-6">
                   <i className={`${service.icon} text-2xl text-white`}></i>
@@ -73,15 +117,11 @@ export default function ServicesList() {
                 </Link>
               </div>
               <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                <img 
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full rounded-lg shadow-lg object-cover object-top"
-                />
+                {/* TODO: Add downloaded image for {service.title} here (400x300 landscape) */}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

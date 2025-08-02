@@ -2,8 +2,27 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function HeroSection() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 }
+  };
+
+  const fadeInUpDelay = {
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay: 0.2 }
+  };
+
+  const fadeInUpDelayMore = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay: 0.4 }
+  };
+
   return (
     <section 
       className="relative h-screen flex items-center justify-center"
@@ -19,17 +38,26 @@ export default function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         {/* PLACEHOLDER: Add company hero image/video background here */}
         {/* TODO: Replace background with hero image/video showcasing beautiful Zambian residential properties */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <motion.h1 
+          className="text-4xl md:text-6xl font-bold mb-6"
+          {...fadeInUp}
+        >
           Own Land. Build Your Future.
           <br />
           <span className="text-[#f7b733]">Plots Available Now</span>
-        </h1>
+        </motion.h1>
         
-        <p className="text-lg md:text-xl mb-8 max-w-4xl mx-auto">
+        <motion.p 
+          className="text-lg md:text-xl mb-8 max-w-4xl mx-auto"
+          {...fadeInUpDelay}
+        >
           Secure your titled residential plot today. No hidden fees. Flexible payment plans. Start your journey to property ownership with a trusted Zambian developer.
-        </p>
+        </motion.p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+          {...fadeInUpDelayMore}
+        >
           <Link 
             href="/listings" 
             className="bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer whitespace-nowrap"
@@ -43,7 +71,7 @@ export default function HeroSection() {
           >
             Start My Journey
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

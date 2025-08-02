@@ -1,6 +1,20 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function AboutHero() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 60 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8 }
+  };
+
+  const fadeInUpDelay = {
+    initial: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay: 0.3 }
+  };
+
   return (
     <section 
       className="relative h-[60vh] flex items-center justify-center"
@@ -13,8 +27,18 @@ export default function AboutHero() {
     >
       <div className="text-center text-white max-w-4xl px-4">
         {/* TODO: Replace with professional photo of Calm Mountain Properties office building or aerial view of developments */}
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Zambia's Compass for Land Ownership Dreams</h1>
-        <p className="text-xl md:text-2xl font-light">Where wanderers find their destiny and aspirations take root</p>
+        <motion.h1 
+          className="text-5xl md:text-6xl font-bold mb-6"
+          {...fadeInUp}
+        >
+          Zambia's Compass for Land Ownership Dreams
+        </motion.h1>
+        <motion.p 
+          className="text-xl md:text-2xl font-light"
+          {...fadeInUpDelay}
+        >
+          Where wanderers find their destiny and aspirations take root
+        </motion.p>
       </div>
     </section>
   );

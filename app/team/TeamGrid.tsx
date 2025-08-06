@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function TeamGrid() {
   const teamMembers = [
     {
@@ -25,16 +27,29 @@ export default function TeamGrid() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Meet Our Leadership Team</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our leadership team brings years of experience and dedication to making your property ownership dreams a reality
           </p>
-        </div>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <motion.div 
+              key={index} 
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
               <img 
                 src={member.image}
                 alt={member.name}
@@ -64,7 +79,7 @@ export default function TeamGrid() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -3,61 +3,65 @@
 import { motion } from 'framer-motion';
 
 export default function CompanyOverview() {
-  const fadeInLeft = {
-    initial: { opacity: 0, x: -60 },
-    whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
-  const fadeInRight = {
-    initial: { opacity: 0, x: 60 },
-    whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div {...fadeInLeft}>
-            <motion.h2 
-              className="text-4xl font-bold text-[#0a192f] mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              The Calm Mountain Difference
-            </motion.h2>
-            <motion.p 
-              className="text-lg text-gray-700 mb-6 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              Calm Mountain is a reputable property developer and real estate agency with branches in Ndola and Kitwe. We pride ourselves on providing top-notch real estate services to individuals and businesses looking to buy, sell, or rent properties within and outside the region.
-            </motion.p>
-            <motion.p 
-              className="text-lg text-gray-700 mb-8 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Our main goal is to provide easy access to land for the Zambian people and ensure the proper management of properties in the country. As the sun arcs across the savannah, we stand sentinel, guardians of dreams, stewards of prosperity, making land ownership accessible to every family.
-            </motion.p>
-            {/* Removed stats badges per request */}
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <h2 className="text-4xl font-bold text-[#0a192f] mb-6">About Calm Mountain Properties</h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Calm Mountain is a reputable property developer and real estate agency with branches in Ndola and Kitwe. The company prides itself on providing top-notch real estate services to individuals and businesses looking to buy, sell, or rent properties within and outside the region.
+            </p>
           </motion.div>
-          <motion.div className="relative" {...fadeInRight}>
-            {/* TODO: Add professional photo of Calm Mountain Properties team working together or company office exterior */}
-            <img 
-              src="/images/company-team.jpg"
-              alt="Calm Mountain Properties Team"
-              className="w-full rounded-lg shadow-lg object-cover"
-            />
+
+          <motion.div 
+            className="grid md:grid-cols-2 gap-12 items-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <div>
+              <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Our Mission</h3>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Our main goal is to provide easy access to land for the Zambian people and ensure the proper management of properties in the country. As the sun arcs across the savannah, we stand sentinel, guardians of dreams, stewards of prosperity, making land ownership accessible to every family.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-[#f7b733] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i className="ri-check-line text-white text-sm"></i>
+                  </div>
+                  <p className="text-gray-700">Professional property development and management</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-[#f7b733] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i className="ri-check-line text-white text-sm"></i>
+                  </div>
+                  <p className="text-gray-700">Comprehensive real estate services</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-[#f7b733] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <i className="ri-check-line text-white text-sm"></i>
+                  </div>
+                  <p className="text-gray-700">Trusted by clients across Zambia</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="/images/about-team.jpg" 
+                alt="Calm Mountain Properties Team"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+              />
+            </div>
           </motion.div>
         </div>
       </div>

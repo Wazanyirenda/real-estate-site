@@ -3,18 +3,6 @@
 import { motion } from 'framer-motion';
 
 export default function AboutHero() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
-  };
-
-  const fadeInUpDelay = {
-    initial: { opacity: 0, y: 40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.8, delay: 0.3 }
-  };
-
   return (
     <section 
       className="relative h-[60vh] flex items-center justify-center"
@@ -25,21 +13,33 @@ export default function AboutHero() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="text-center text-white max-w-4xl px-4">
+      <motion.div 
+        className="text-center text-white max-w-4xl px-4 mt-24"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         {/* TODO: Replace with professional photo of Calm Mountain Properties office building or aerial view of developments */}
         <motion.h1 
           className="text-5xl md:text-6xl font-bold mb-6"
-          {...fadeInUp}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           Zambia's Compass for Land Ownership Dreams
         </motion.h1>
         <motion.p 
           className="text-xl md:text-2xl font-light"
-          {...fadeInUpDelay}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           Where wanderers find their destiny and aspirations take root
         </motion.p>
-      </div>
+      </motion.div>
     </section>
   );
 }

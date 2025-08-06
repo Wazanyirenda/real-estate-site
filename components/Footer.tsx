@@ -10,9 +10,9 @@ export default function Footer() {
           <div>
             {/* TODO: Replace with Calm Mountain Properties white/light logo version for dark footer background */}
             <img 
-              src="/images/logo-white.png" 
+              src="/images/logo.svg" 
               alt="Calm Mountain Properties Logo" 
-              className="h-12 w-auto mb-4"
+              className="h-16 w-auto mb-4"
             />
             {/* Removed fallback text - space preserved for logo image */}
             <p className="text-gray-300 mb-4">

@@ -1,54 +1,18 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export default function LocationMap() {
-  const fadeInLeft = {
-    initial: { opacity: 0, x: -60 },
-    whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
-  const fadeInRight = {
-    initial: { opacity: 0, x: 60 },
-    whileInView: { opacity: 1, x: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-12" {...fadeInUp}>
-          <motion.h2 
-            className="text-4xl font-bold text-[#0a192f] mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Find Us
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-600"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Find Us</h2>
+          <p className="text-xl text-gray-600">
             Visit our main office in Ndola or contact us to arrange a meeting
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div className="bg-[#f5f5f5] p-8 rounded-lg" {...fadeInLeft}>
+          <div className="bg-[#f5f5f5] p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Main Office Location</h3>
             <div className="space-y-4">
               <div className="flex items-start">
@@ -87,25 +51,19 @@ export default function LocationMap() {
                 </li>
                 <li className="flex items-center">
                   <i className="ri-bus-line text-[#f7b733] mr-3"></i>
-                  Accessible by public transport
+                  Public transport accessible
                 </li>
                 <li className="flex items-center">
-                  <i className="ri-direction-line text-[#f7b733] mr-3"></i>
-                  Easy access from main roads
+                  <i className="ri-map-line text-[#f7b733] mr-3"></i>
+                  <a href="https://maps.app.goo.gl/ARU2uudKDacEDi6F7" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:underline">
+                    View on Google Maps
+                  </a>
                 </li>
               </ul>
-              <a 
-                href="https://maps.app.goo.gl/ARU2uudKDacEDi6F7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-block bg-[#f7b733] text-white px-6 py-3 rounded-lg hover:bg-[#e6a82d] transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Get Directions
-              </a>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div className="h-[400px] md:h-full rounded-lg overflow-hidden shadow-lg" {...fadeInRight}>
+          <div className="h-[400px] md:h-full rounded-lg overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.123456789!2d28.6367!3d-12.9542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU3JzE1LjEiUyAyOMKwMzgnMTIuMSJF!5e0!3m2!1sen!2szm!4v1730000000000"
               width="100%"
@@ -116,7 +74,7 @@ export default function LocationMap() {
               referrerPolicy="no-referrer-when-downgrade"
               title="Calm Mountain Properties Ndola Location"
             ></iframe>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

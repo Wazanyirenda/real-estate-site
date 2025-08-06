@@ -29,16 +29,6 @@ export default function ListingsGrid() {
       category: 'kitwe'
     },
     {
-      id: 'dreamscape-housing',
-      title: 'Dreamscape Housing Project',
-      location: 'Ndola',
-      priceRange: 'K45,000 - K75,000',
-      image: '/images/estates/dreamscape-housing.jpg', // TODO: Add photo of Dreamscape Housing Project showing access roads and plot boundaries
-      features: ['Titled & Beaconed', 'Access Road', '3km from Airport'],
-      plotSizes: ['30x20'],
-      category: 'ndola'
-    },
-    {
       id: 'fatima-estate',
       title: 'Fatima Estate',
       location: 'Ndola',

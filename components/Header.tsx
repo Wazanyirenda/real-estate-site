@@ -20,13 +20,13 @@ export default function Header() {
   return (
     <header className="bg-white shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           <Link href="/" className="flex items-center">
             {/* TODO: Replace with Calm Mountain Properties logo image - should be horizontal logo with company name */}
             <img 
-              src="/images/logo.png" 
+              src="/images/logoo.png" 
               alt="Calm Mountain Properties Logo" 
-              className="h-12 w-auto"
+              className="h-24 w-auto"
             />
             {/* Removed fallback text - space preserved for logo image */}
           </Link>

@@ -1,8 +1,6 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
-
 export default function ContactInfo() {
   const offices = [
     {
@@ -31,62 +29,17 @@ export default function ContactInfo() {
     }
   ];
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
-  const staggerContainer = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true, amount: 0.1 },
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-  };
-
-  const staggerItem = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-16" {...fadeInUp}>
-          <motion.h2 
-            className="text-4xl font-bold text-[#0a192f] mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Our Offices
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-600"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Visit us at any of our convenient locations across Zambia
-          </motion.p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-4">Our Offices</h2>
+          <p className="text-xl text-gray-600">Visit us at any of our convenient locations across Zambia</p>
+        </div>
 
-        <motion.div 
-          className="grid md:grid-cols-3 gap-8"
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-        >
+        <div className="grid md:grid-cols-3 gap-8">
           {offices.map((office, index) => (
-            <motion.div 
-              key={index} 
-              className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow text-center"
-              variants={staggerItem}
-            >
+            <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow text-center">
               <div className="w-16 h-16 bg-[#f7b733] rounded-full flex items-center justify-center mx-auto mb-6">
                 <i className={`${office.icon} text-2xl text-white`}></i>
               </div>
@@ -110,17 +63,11 @@ export default function ContactInfo() {
                   <span className="text-sm">{office.email}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
+        <div className="mt-16 text-center">
           <div className="bg-[#f5f5f5] rounded-lg p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-[#0a192f] mb-4">Business Hours</h3>
             <div className="grid md:grid-cols-2 gap-6 text-gray-600">
@@ -135,7 +82,7 @@ export default function ContactInfo() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

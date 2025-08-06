@@ -1,9 +1,11 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function TeamHero() {
   return (
     <section 
-      className="relative h-[60vh] flex items-center justify-center"
+      className="relative h-[50vh] flex items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('/images/team-hero.jpg')`,
         backgroundSize: 'cover',
@@ -11,11 +13,33 @@ export default function TeamHero() {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="text-center text-white max-w-4xl px-4">
-        {/* TODO: Replace with photo of MD and Sales Lead or company leadership */}
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Leadership</h1>
-        <p className="text-xl md:text-2xl font-light">Meet the leaders driving Calm Mountain Properties forward</p>
-      </div>
+      <motion.div 
+        className="text-center text-white max-w-4xl px-4 mt-24"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        {/* TODO: Replace with professional photo of Calm Mountain Properties leadership team */}
+        <motion.h1 
+          className="text-5xl md:text-6xl font-bold mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          Our Leadership
+        </motion.h1>
+        <motion.p 
+          className="text-xl md:text-2xl font-light"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          Meet the leaders driving Calm Mountain Properties forward
+        </motion.p>
+      </motion.div>
     </section>
   );
 }

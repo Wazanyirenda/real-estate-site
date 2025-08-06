@@ -4,41 +4,34 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function CTASection() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
   return (
     <section className="py-20 bg-[#0a192f] text-white">
       <div className="container mx-auto px-4 text-center">
         <motion.h2 
           className="text-4xl font-bold mb-6"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           Ready to Start Your Land Ownership Journey?
         </motion.h2>
         <motion.p 
           className="text-xl mb-8 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           Our team is here to answer your questions and guide you every step of the way.
         </motion.p>
         
         <motion.div 
           className="flex flex-col sm:flex-row gap-4 justify-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <Link 
             href="/listings" 

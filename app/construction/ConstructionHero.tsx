@@ -3,7 +3,7 @@
 export default function ConstructionHero() {
   return (
     <section 
-      className="relative h-96 flex items-center justify-center"
+      className="relative h-96 flex items-start justify-center pt-32"
       style={{
         backgroundColor: '#f5f5f5', // Placeholder background color - TODO: Add downloaded hero image if needed
       }}

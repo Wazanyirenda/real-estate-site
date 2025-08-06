@@ -1,127 +1,90 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function ServicesList() {
   const services = [
     {
-      icon: 'ri-home-4-line',
+      icon: 'ri-map-pin-2-line',
       title: 'Plot Sales',
-      description: 'Premium residential plots in prime locations across Zambia with flexible payment plans.',
-      features: ['Titled and beaconed plots', 'Various sizes available', 'Flexible payment terms', 'Prime locations'],
-      // TODO: Add downloaded image for Plot Sales (e.g., beautiful residential plot with survey markers, 400x300 landscape)
+      description: 'Premium serviced plots in prime locations with proper documentation and utilities. We offer flexible payment plans to make land ownership accessible.',
+      features: ['Titled & Beaconed Plots', 'Flexible Payment Plans', 'Prime Locations', 'Legal Documentation']
     },
     {
-      icon: 'ri-building-line',
+      icon: 'ri-community-line',
       title: 'Estate Planning',
-      description: 'Comprehensive estate development planning and infrastructure design services.',
-      features: ['Master planning', 'Infrastructure design', 'Zoning analysis', 'Development permits'],
-      // TODO: Add downloaded image for Estate Planning (e.g., architectural blueprints on table, 400x300 landscape)
+      description: 'Comprehensive estate development and planning services for residential communities. From concept to completion, we handle every detail.',
+      features: ['Master Planning', 'Infrastructure Development', 'Community Design', 'Regulatory Compliance']
     },
     {
-      icon: 'ri-file-text-line',
+      icon: 'ri-file-shield-2-line',
       title: 'Title Processing',
-      description: 'Fast and reliable title deed processing and documentation services.',
-      features: ['Title deed processing', 'Legal documentation', 'Property registration', 'Compliance verification'],
-      // TODO: Add downloaded image for Title Processing (e.g., legal documents on desk, 400x300 landscape)
+      description: 'Professional title deed processing and legal documentation services. We ensure all legal requirements are met for secure property ownership.',
+      features: ['Legal Documentation', 'Title Deed Processing', 'Regulatory Compliance', 'Legal Verification']
     },
     {
-      icon: 'ri-tools-line',
+      icon: 'ri-hammer-line',
       title: 'Construction Supervision',
-      description: 'Professional construction supervision and project management services.',
-      features: ['Project management', 'Quality control', 'Timeline management', 'Budget oversight'],
-      // TODO: Add downloaded image for Construction Supervision (e.g., supervisor on construction site, 400x300 landscape)
+      description: 'Expert project management and construction supervision services. We oversee every aspect of your construction project.',
+      features: ['Project Management', 'Quality Control', 'Timeline Management', 'Cost Monitoring']
     },
     {
-      icon: 'ri-compass-3-line',
+      icon: 'ri-ruler-2-line',
       title: 'Land Surveying',
-      description: 'Accurate land surveying and mapping services for property development.',
-      features: ['Topographic surveys', 'Boundary surveys', 'Construction surveys', 'GPS mapping'],
-      // TODO: Add downloaded image for Land Surveying (e.g., surveyor using equipment in field, 400x300 landscape)
+      description: 'Accurate land surveying and mapping services for property development. Professional surveying ensures precise plot boundaries.',
+      features: ['Boundary Surveying', 'Topographic Mapping', 'GPS Technology', 'Survey Reports']
+    },
+    {
+      icon: 'ri-home-gear-line',
+      title: 'Property Management',
+      description: 'Comprehensive property management services for investors and property owners. We handle maintenance, tenant relations, and more.',
+      features: ['Tenant Management', 'Maintenance Services', 'Rent Collection', 'Property Inspections']
     }
   ];
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 },
-    viewport: { once: true, amount: 0.1 }
-  };
-
-  const staggerContainer = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true, amount: 0.1 },
-    transition: { staggerChildren: 0.3, delayChildren: 0.3 }
-  };
-
-  const staggerItem = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.8 }
-  };
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-16" {...fadeInUp}>
-          <motion.h2 
-            className="text-4xl font-bold text-[#0a192f] mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            What We Offer
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Complete real estate solutions from plot sales to construction supervision
-          </motion.p>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-4">Our Services</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            We provide comprehensive real estate services to meet all your property needs, from initial planning to final construction.
+          </p>
         </motion.div>
         
-        <motion.div 
-          className="space-y-16"
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div 
               key={index} 
-              className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
-              variants={staggerItem}
+              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="w-16 h-16 bg-[#f7b733] rounded-full flex items-center justify-center mb-6">
-                  <i className={`${service.icon} text-2xl text-white`}></i>
-                </div>
-                <h3 className="text-3xl font-bold text-[#0a192f] mb-4">{service.title}</h3>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                <ul className="space-y-2 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <i className="ri-check-line text-[#f7b733] mr-3"></i>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/contact" className="bg-[#f7b733] text-white px-8 py-3 rounded-lg hover:bg-[#e6a82d] transition-colors cursor-pointer whitespace-nowrap">
-                  Get Quote
-                </Link>
+              <div className="w-16 h-16 bg-[#f7b733]/20 rounded-lg flex items-center justify-center mb-6">
+                <i className={`${service.icon} text-2xl text-[#f7b733]`}></i>
               </div>
-              <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                {/* TODO: Add downloaded image for {service.title} here (400x300 landscape) */}
+              <h3 className="text-xl font-semibold text-[#0a192f] mb-4">{service.title}</h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+              
+              <div className="space-y-2">
+                {service.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-center space-x-2">
+                    <i className="ri-check-line text-[#f7b733] text-sm"></i>
+                    <span className="text-sm text-gray-600">{feature}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

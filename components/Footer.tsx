@@ -20,11 +20,11 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               {/* TODO: Replace with actual Calm Mountain Properties social media links */}
-              <a href="https://facebook.com/calmmountainproperties" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:text-white transition-colors cursor-pointer">
+              <a href="https://www.facebook.com/share/1CGwLja4vM/" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:text-white transition-colors cursor-pointer">
                 <i className="ri-facebook-fill text-xl"></i>
               </a>
-              <a href="https://twitter.com/calmmountainprop" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:text-white transition-colors cursor-pointer">
-                <i className="ri-twitter-fill text-xl"></i>
+              <a href="https://tiktok.com/@calmmountainproperties" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:text-white transition-colors cursor-pointer">
+                <i className="ri-tiktok-fill text-xl"></i>
               </a>
               <a href="https://instagram.com/calmmountainproperties" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:text-white transition-colors cursor-pointer">
                 <i className="ri-instagram-fill text-xl"></i>

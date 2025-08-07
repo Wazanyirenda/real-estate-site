@@ -13,8 +13,8 @@ export default function ListingsGrid() {
       title: 'Great North Estate',
       location: 'Kabwe',
       priceRange: 'K20,000 - K70,000',
-      image: '/images/estates/great-north-estate.jpg', // TODO: Add photo of Great North Estate plots showing survey beacons and green landscape
-      features: ['Titled & Beaconed', '3km from Airport', 'Flexible Payment Plans'],
+      image: '/images/estates/greatnorth-estate.png', // Great North Estate plots showing survey beacons and green landscape
+      features: ['Titled', 'Beaconed'],
       plotSizes: ['40x20', '30x20', '40x30'],
       category: 'kabwe'
     },
@@ -23,8 +23,8 @@ export default function ListingsGrid() {
       title: 'Paramount Estate',
       location: 'Kitwe',
       priceRange: 'K40,000 - K85,000',
-      image: '/images/estates/paramount-estate.jpg', // TODO: Add photo of Paramount Estate showing modern infrastructure and paved roads
-      features: ['Prime Kitwe Location', 'Titled & Beaconed', 'Modern Infrastructure'],
+      image: '/images/estates/paramount-estate.jpeg', // Paramount Estate showing modern infrastructure and paved roads
+      features: ['Titled', 'Beaconed'],
       plotSizes: ['40x20', '30x20'],
       category: 'kitwe'
     },
@@ -33,8 +33,8 @@ export default function ListingsGrid() {
       title: 'Fatima Estate',
       location: 'Ndola',
       priceRange: 'K35,000 - K75,000',
-      image: '/images/estates/fatima-estate.jpg', // TODO: Add photo of Fatima Estate showing road frontage and ZESCO power lines
-      features: ['Road Frontage', 'ZESCO Power Lines', '1km from Dual Carriageway'],
+      image: '/images/estates/fatima-estate.jpeg', // Fatima Estate showing road frontage and ZESCO power lines
+      features: ['Titled', 'Beaconed', 'Road frontage', 'Zesco power lines on site'],
       plotSizes: ['30x20', '32x25'],
       category: 'ndola'
     }

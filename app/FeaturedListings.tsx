@@ -11,8 +11,8 @@ export default function FeaturedListings() {
       title: 'Great North Estate',
       location: 'Kabwe',
       price: 'From K20,000',
-      image: '/images/estates/great-north-estate.jpg',
-      features: ['Titled & Beaconed', '3km from Airport', 'Flexible Payment Plans'],
+      image: '/images/estates/greatnorth-estate.png',
+      features: ['Titled', 'Beaconed'],
       plotSizes: ['40x20', '30x20', '40x30']
     },
     {
@@ -20,8 +20,8 @@ export default function FeaturedListings() {
       title: 'Paramount Estate',
       location: 'Kitwe',
       price: 'From K40,000',
-      image: '/images/estates/paramount-estate.jpg',
-      features: ['Prime Kitwe Location', 'Titled & Beaconed', 'Modern Infrastructure'],
+      image: '/images/estates/paramount-estate.jpeg',
+      features: ['Titled', 'Beaconed'],
       plotSizes: ['40x20', '30x20']
     },
     {
@@ -29,8 +29,8 @@ export default function FeaturedListings() {
       title: 'Fatima Estate',
       location: 'Ndola',
       price: 'From K35,000',
-      image: '/images/estates/fatima-estate.jpg',
-      features: ['Road Frontage', 'ZESCO Power Lines', '1km from Dual Carriageway'],
+      image: '/images/estates/fatima-estate.jpeg',
+      features: ['Titled', 'Beaconed', 'Road frontage', 'Zesco power lines on site'],
       plotSizes: ['30x20', '32x25']
     }
   ];

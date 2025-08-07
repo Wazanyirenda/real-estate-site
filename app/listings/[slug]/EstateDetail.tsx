@@ -15,47 +15,42 @@ export default function EstateDetail({ estateSlug }: EstateDetailProps) {
       name: 'Great North Estate',
       location: 'Kabwe',
       description: 'Premium residential plots strategically located near Simon Mwansa Kapwepwe Airport. This estate offers titled and beaconed plots with excellent connectivity and modern infrastructure.',
-      features: ['Titled & Beaconed', '3km from Simon Mwansa Kapwepwe Airport', 'Prime Location', 'Flexible Payment Plans', 'Modern Infrastructure'],
+      features: ['Titled', 'Beaconed'],
       images: [
-        '/images/estates/great-north-estate-1.jpg', // TODO: Main photo of Great North Estate plots with survey beacons and green landscape
-        '/images/estates/great-north-estate-2.jpg', // TODO: Aerial view of Great North Estate showing plot layout and access roads
-        '/images/estates/great-north-estate-3.jpg'  // TODO: Access road photo showing estate entrance and signage
+        '/images/estates/greatnorth-estate.png', // Main photo of Great North Estate plots with survey beacons and green landscape
+        '/images/estates/greatnorth-estate.png', // Aerial view of Great North Estate showing plot layout and access roads
+        '/images/estates/greatnorth-estate.png'  // Access road photo showing estate entrance and signage
       ],
       plots: [
         { size: '40x20', cash: 30000, months6: 40000, months12: 50000, months24: 60000 },
         { size: '30x20', cash: 20000, months6: 25000, months12: 30000, months24: 35000 },
         { size: '40x30', cash: 40000, months6: 50000, months12: 60000, months24: 70000 }
       ],
-      amenities: ['Water Connection Available', 'Electricity Connection Ready', 'Paved Access Roads', 'Security Features', 'Drainage System'],
       distances: [
-        { place: 'Simon Mwansa Kapwepwe Airport', distance: '3km' },
-        { place: 'Kabwe Town Center', distance: '5km' },
-        { place: 'Main Highway', distance: '2km' },
-        { place: 'Schools', distance: '1km' },
-        { place: 'Hospital', distance: '4km' }
+        { place: 'Lake Petroleum station to site', distance: '8.4 km' },
+        { place: 'Kabwe/Lusaka Road to site', distance: '2.7 km' },
+        { place: 'Hungry Lion (CBD) to site', distance: '10 km' }
       ]
     },
     'paramount-estate': {
       name: 'Paramount Estate',
       location: 'Kitwe',
       description: 'Exclusive residential development in prime Kitwe location offering premium plots with modern infrastructure and secure environment.',
-      features: ['Titled & Beaconed', 'Prime Kitwe Location', 'Modern Infrastructure', 'Secure Environment', 'Flexible Payment Plans'],
+      features: ['Titled', 'Beaconed'],
       images: [
-        '/images/estates/paramount-estate-1.jpg', // TODO: Main photo of Paramount Estate showing modern infrastructure and paved roads
-        '/images/estates/paramount-estate-2.jpg', // TODO: Gated entrance of Paramount Estate with security features
-        '/images/estates/paramount-estate-3.jpg'  // TODO: Street lighting and plot boundaries at Paramount Estate
+        '/images/estates/paramount-estate.jpeg', // Main photo of Paramount Estate showing modern infrastructure and paved roads
+        '/images/estates/paramount-estate.jpeg', // Gated entrance of Paramount Estate with security features
+        '/images/estates/paramount-estate.jpeg'  // Street lighting and plot boundaries at Paramount Estate
       ],
       plots: [
         { size: '40x20', cash: 55000, months6: 65000, months12: 75000, months24: 85000 },
         { size: '30x20', cash: 40000, months6: 55000, months12: 65000, months24: 75000 }
       ],
-      amenities: ['Gated Community', 'Street Lighting', 'Water & Electricity Ready', 'Paved Roads', 'Security Patrol'],
       distances: [
-        { place: 'Kitwe City Center', distance: '3km' },
-        { place: 'Shopping Centers', distance: '2km' },
-        { place: 'Schools', distance: '1km' },
-        { place: 'Hospital', distance: '2km' },
-        { place: 'Main Highway', distance: '1km' }
+        { place: 'away from checkpoint', distance: '5.9 km' },
+        { place: 'from Mwekera Bridge', distance: '4.3 km' },
+        { place: 'from Wusakile round about', distance: '12.8 km' },
+        { place: 'from CBD (ZIBSIP College)', distance: '16.2 km' }
       ]
     },
     'dreamscape-housing': {
@@ -71,7 +66,6 @@ export default function EstateDetail({ estateSlug }: EstateDetailProps) {
       plots: [
         { size: '30x20', cash: 45000, months6: 55000, months12: 65000, months24: 75000 }
       ],
-      amenities: ['Access Roads', 'Water Connection Ready', 'Electricity Connection', 'Modern Drainage', 'Security Features'],
       distances: [
         { place: 'Simon Mwansa Kapwepwe Airport', distance: '3km' },
         { place: 'Ndola City Center', distance: '5km' },
@@ -84,23 +78,20 @@ export default function EstateDetail({ estateSlug }: EstateDetailProps) {
       name: 'Fatima Estate',
       location: 'Ndola',
       description: 'Strategic location with excellent amenities and connectivity. Features road frontage, ZESCO power lines on site, and proximity to major shopping centers.',
-      features: ['Titled & Beaconed', 'Road Frontage', 'ZESCO Power Lines', '14km from Jacaranda Mall', '1km from Ndola-Lusaka Dual Carriageway'],
+      features: ['Titled', 'Beaconed', 'Road frontage', 'Zesco power lines on site'],
       images: [
-        '/images/estates/fatima-estate-1.jpg', // TODO: Main photo of Fatima Estate showing road frontage and ZESCO power lines
-        '/images/estates/fatima-estate-2.jpg', // TODO: Surveyed plots at Fatima Estate with visible power infrastructure
-        '/images/estates/fatima-estate-3.jpg'  // TODO: Strategic location near dual carriageway with modern infrastructure
+        '/images/estates/fatima-estate.jpeg', // Main photo of Fatima Estate showing road frontage and ZESCO power lines
+        '/images/estates/fatima-estate.jpeg', // Surveyed plots at Fatima Estate with visible power infrastructure
+        '/images/estates/fatima-estate.jpeg'  // Strategic location near dual carriageway with modern infrastructure
       ],
       plots: [
         { size: '30x20', cash: 35000, months6: 45000, months12: 55000, months24: 65000 },
         { size: '32x25', cash: 45000, months6: 55000, months12: 65000, months24: 75000 }
       ],
-      amenities: ['Road Frontage', 'ZESCO Power Lines On Site', 'Water Connection Ready', 'Proper Drainage', 'Security Features'],
       distances: [
-        { place: 'Jacaranda Mall', distance: '14km' },
-        { place: 'Ndola-Lusaka Dual Carriageway', distance: '1km' },
-        { place: 'Indeni', distance: '9km' },
-        { place: 'Ndola City Center', distance: '8km' },
-        { place: 'Schools', distance: '2km' }
+        { place: 'from Jacaranda Mall', distance: '14 km' },
+        { place: 'from Ndola Lusaka dual carriage way', distance: '1 km' },
+        { place: 'from Indeni', distance: '9 km' }
       ]
     }
   };
@@ -170,17 +161,6 @@ export default function EstateDetail({ estateSlug }: EstateDetailProps) {
                       </ul>
                     </div>
                     
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#0a192f] mb-4">Amenities</h3>
-                      <ul className="space-y-2">
-                        {estate.amenities.map((amenity, index) => (
-                          <li key={index} className="flex items-center text-gray-700">
-                            <i className="ri-check-line text-[#f7b733] mr-3"></i>
-                            {amenity}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
                 </div>
 

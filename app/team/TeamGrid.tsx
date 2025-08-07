@@ -8,20 +8,20 @@ export default function TeamGrid() {
       name: 'Kathy Kapalakasha',
       position: 'Managing Director',
       department: 'Executive',
-      image: '/images/team/david-mwamba.jpg', // TODO: Add professional photo of MD David Mwamba
-      bio: 'Kathy leads our company with over 15 years of experience in Zambian real estate development and property management.',
-      phone: '+260 97 123 4567',
+      image: '/images/team/kathy.png', // Professional photo of Kathy Kapalakasha
+      bio: 'Kathy leads our company in Zambian real estate development and property management.',
+      phone: '+260 965 330 896',
       email: 'md@calmmountainproperties.com'
     },
-    {
-      name: 'name name',
-      position: 'Sales Lead',
-      department: 'Sales',
-      image: '/images/team/grace-phiri.jpg', // TODO: Add professional photo of Sales Lead Grace Phiri
-      bio: 'Name leads our sales efforts and has helped hundreds of clients find their perfect plots across our estates.',
-      phone: '+260 97 234 5678',
-      email: 'name@calmmountainproperties.com'
-    }
+    // {
+    //   name: 'name name',
+    //   position: 'Sales Lead',
+    //   department: 'Sales',
+    //   image: '/images/team/grace-phiri.jpg', // TODO: Add professional photo of Sales Lead Grace Phiri
+    //   bio: 'Name leads our sales efforts and has helped hundreds of clients find their perfect plots across our estates.',
+    //   phone: '+260 97 234 5678',
+    //   email: 'name@calmmountainproperties.com'
+    // }
   ];
 
   return (
@@ -40,7 +40,7 @@ export default function TeamGrid() {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-12 max-w-2xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div 
               key={index} 
@@ -53,7 +53,7 @@ export default function TeamGrid() {
               <img 
                 src={member.image}
                 alt={member.name}
-                className="w-full h-80 object-cover object-top"
+                className="w-full h-64 object-cover object-center rounded-lg"
               />
               <div className="p-8">
                 <div className="text-center mb-6">

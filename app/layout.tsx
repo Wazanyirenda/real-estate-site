@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Calm Mountain Properties',
-  description: 'Leading real estate company in Zambia offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000. Professional property development, title deed processing, and construction services.',
-  keywords: 'real estate zambia, land for sale zambia, property development, title deeds, residential plots kabwe kitwe ndola, construction services zambia, plot sales zambia, estate planning zambia',
+  title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
+  description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000. Professional property development, title deed processing, and construction services. Your trusted partner for land ownership in Zambia.',
+  keywords: 'real estate zambia, land for sale zambia, residential plots kabwe, residential plots kitwe, residential plots ndola, property development zambia, title deeds zambia, construction services zambia, plot sales zambia, estate planning zambia, land ownership zambia, property investment zambia, real estate agent zambia, property management zambia, land surveying zambia, title processing zambia, construction supervision zambia, great north estate kabwe, paramount estate kitwe, fatima estate ndola',
   authors: [{ name: 'Calm Mountain Properties' }],
   creator: 'Calm Mountain Properties',
   publisher: 'Calm Mountain Properties',
@@ -19,15 +19,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
-    description: 'Titled residential plots from K20,000 with flexible payment plans in Kabwe, Kitwe & Ndola',
+    description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000. Professional property development and construction services.',
     url: 'https://calmmountainproperties.com',
     siteName: 'Calm Mountain Properties',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-logo.svg',
         width: 1200,
         height: 630,
-        alt: 'Calm Mountain Properties - Real Estate in Zambia',
+        alt: 'Calm Mountain Properties Logo - Premium Real Estate in Zambia',
+        type: 'image/svg+xml',
       },
     ],
     locale: 'en_US',
@@ -36,8 +37,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
-    description: 'Titled residential plots from K20,000 with flexible payment plans in Kabwe, Kitwe & Ndola',
-    images: ['/og-image.jpg'],
+    description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000.',
+    images: ['/og-logo.svg'],
+    creator: '@calmmountainprop',
   },
   robots: {
     index: true,
@@ -52,6 +54,15 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
+  },
+  category: 'Real Estate',
+  classification: 'Business',
+  referrer: 'origin-when-cross-origin',
+  other: {
+    'geo.region': 'ZM',
+    'geo.placename': 'Zambia',
+    'geo.position': '-13.1339;27.8493',
+    'ICBM': '-13.1339, 27.8493',
   },
 };
 
@@ -78,33 +89,105 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
               "name": "Calm Mountain Properties",
-              "description": "Leading real estate company in Zambia offering titled residential plots with flexible payment plans",
-              "url": "https://calmountainproperties.com",
+              "description": "Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola with flexible payment plans from K20,000. Professional property development, title deed processing, and construction services.",
+              "url": "https://calmmountainproperties.com",
               "telephone": "+260 761 370 566",
-              "email": "info@calmountainproperties.com",
+              "email": "info@calmmountainproperties.com",
+              "logo": "https://calmmountainproperties.com/images/logoo.png",
+              "image": "https://calmmountainproperties.com/images/logoo.png",
               "address": [
                 {
                   "@type": "PostalAddress",
                   "streetAddress": "No. 7 Chinika Road, Northrise",
                   "addressLocality": "Ndola",
-                  "addressCountry": "ZM"
+                  "addressRegion": "Copperbelt",
+                  "addressCountry": "ZM",
+                  "postalCode": "10101"
                 },
                 {
                   "@type": "PostalAddress",
                   "streetAddress": "No. 204-214a Lusito Street",
                   "addressLocality": "Kabwe",
-                  "addressCountry": "ZM"
+                  "addressRegion": "Central",
+                  "addressCountry": "ZM",
+                  "postalCode": "10101"
                 },
                 {
                   "@type": "PostalAddress",
                   "streetAddress": "No. 115 Luela Rd, off Cent street Nkana East",
                   "addressLocality": "Kitwe",
+                  "addressRegion": "Copperbelt",
+                  "addressCountry": "ZM",
+                  "postalCode": "10101"
+                }
+              ],
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Kabwe",
+                  "addressRegion": "Central",
+                  "addressCountry": "ZM"
+                },
+                {
+                  "@type": "City", 
+                  "name": "Kitwe",
+                  "addressRegion": "Copperbelt",
+                  "addressCountry": "ZM"
+                },
+                {
+                  "@type": "City",
+                  "name": "Ndola", 
+                  "addressRegion": "Copperbelt",
                   "addressCountry": "ZM"
                 }
               ],
-              "areaServed": ["Kabwe", "Kitwe", "Ndola", "Zambia"],
-              "serviceType": ["Real Estate", "Property Development", "Land Sales", "Construction Services"],
-              "priceRange": "K20,000 - K85,000"
+              "serviceType": [
+                "Real Estate",
+                "Property Development", 
+                "Land Sales",
+                "Title Deed Processing",
+                "Construction Services",
+                "Land Surveying",
+                "Estate Planning"
+              ],
+              "priceRange": "K20,000 - K85,000",
+              "paymentAccepted": "Cash, Bank Transfer, Mobile Money",
+              "currenciesAccepted": "ZMW",
+              "openingHours": "Mo-Fr 08:00-17:00",
+              "sameAs": [
+                "https://facebook.com/share/1CGwLja4vM/",
+                "https://tiktok.com/@calmmountainproperties"
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Residential Plots",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Product",
+                      "name": "Great North Estate - Kabwe",
+                      "description": "Titled residential plots in Kabwe with flexible payment plans"
+                    }
+                  },
+                  {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                      "@type": "Product",
+                      "name": "Paramount Estate - Kitwe",
+                      "description": "Titled residential plots in Kitwe with flexible payment plans"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Product", 
+                      "name": "Fatima Estate - Ndola",
+                      "description": "Titled residential plots in Ndola with flexible payment plans"
+                    }
+                  }
+                ]
+              }
             })
           }}
         />

@@ -39,18 +39,18 @@ export default function ContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: new URLSearchParams({
+        body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          subject: formData.subject,
           estate: formData.estate,
-          plotSize: formData.plotSize,
           message: formData.message
         })
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setSubmitStatus('Thank you for your message! We will get back to you soon.');
@@ -64,9 +64,10 @@ export default function ContactForm() {
           message: ''
         });
       } else {
-        setSubmitStatus('There was an error sending your message. Please try again.');
+        setSubmitStatus(data.error || 'There was an error sending your message. Please try again.');
       }
     } catch (error) {
+      console.error('Contact form error:', error);
       setSubmitStatus('There was an error sending your message. Please try again.');
     } finally {
       setIsSubmitting(false);

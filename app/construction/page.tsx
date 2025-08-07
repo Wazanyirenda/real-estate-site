@@ -8,9 +8,18 @@ import ProjectsGrid from './ProjectsGrid';
 import ConstructionServices from './ConstructionServices';
 
 export const metadata: Metadata = {
-  title: 'Construction Projects & Services | Calm Mountain Properties',
-  description: 'Professional construction supervision, project management, and architectural planning services in Zambia. View our completed and ongoing construction projects.',
-  keywords: 'construction zambia, project management, architectural planning, construction supervision, building contractors',
+  title: 'Construction Companies in Zambia - Professional Construction Services | Calm Mountain Properties',
+  description: 'Leading construction company in Zambia offering professional construction services, project management, and construction supervision. Residential and commercial construction in Kabwe, Kitwe, Ndola. Quality construction with experienced team.',
+  keywords: 'construction companies zambia, construction services zambia, construction company kabwe, construction company kitwe, construction company ndola, building contractors zambia, construction supervision zambia, project management zambia, residential construction zambia, commercial construction zambia, construction contractors zambia, building construction zambia',
+  openGraph: {
+    title: 'Construction Companies in Zambia - Professional Construction Services',
+    description: 'Leading construction company in Zambia offering professional construction services, project management, and construction supervision.',
+    url: 'https://calmmountainproperties.com/construction',
+    images: ['/images/logoo.png'],
+  },
+  alternates: {
+    canonical: '/construction',
+  },
 };
 
 export default function ConstructionPage() {

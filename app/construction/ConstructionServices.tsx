@@ -32,9 +32,10 @@ export default function ConstructionServices() {
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-4">Construction Services</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive construction and project management services for your development needs
+          <h1 className="text-4xl font-bold text-[#0a192f] mb-4">Construction Companies in Zambia - Professional Construction Services</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Leading construction company in Zambia offering comprehensive construction services, project management, and construction supervision. 
+            We serve Kabwe, Kitwe, and Ndola with professional building contractors and construction companies.
           </p>
         </div>
 

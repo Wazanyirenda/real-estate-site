@@ -10,7 +10,7 @@ export default function TeamGrid() {
       department: 'Executive',
       image: '/images/team/kathy.png', // Professional photo of Kathy Kapalakasha
       bio: 'Kathy leads our company in Zambian real estate development and property management.',
-      phone: '+260 965 330 896',
+      phone: '+260 761 370 566',
       email: 'md@calmmountainproperties.com'
     },
     // {

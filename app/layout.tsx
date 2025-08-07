@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
-  description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000. Professional property development, title deed processing, and construction services. Your trusted partner for land ownership in Zambia.',
+  description: 'Leading Zambian real estate development company specializing in titled residential plots, construction services, and property consultancy. We offer premium plots in strategic locations across Kabwe, Kitwe, and Ndola with flexible payment plans. Our experienced team provides comprehensive real estate solutions including title processing, construction supervision, property management, and land surveying. With a proven track record of excellence and commitment to quality, we are your trusted partner for real estate investment and development in Zambia. Discover our premium estates including Great North Estate, Paramount Estate, and Fatima Estate.',
   keywords: 'real estate zambia, land for sale zambia, residential plots kabwe, residential plots kitwe, residential plots ndola, property development zambia, title deeds zambia, construction services zambia, plot sales zambia, estate planning zambia, land ownership zambia, property investment zambia, real estate agent zambia, property management zambia, land surveying zambia, title processing zambia, construction supervision zambia, great north estate kabwe, paramount estate kitwe, fatima estate ndola',
   authors: [{ name: 'Calm Mountain Properties' }],
   creator: 'Calm Mountain Properties',
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  openGraph: {
-    title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
-    description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000. Professional property development and construction services.',
-    url: 'https://calmmountainproperties.com',
+      openGraph: {
+      title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
+      description: 'Leading Zambian real estate development company specializing in titled residential plots, construction services, and property consultancy. We offer premium plots in strategic locations across Kabwe, Kitwe, and Ndola with flexible payment plans. Our experienced team provides comprehensive real estate solutions with a proven track record of excellence.',
+      url: 'https://calmmountainproperties.com',
     siteName: 'Calm Mountain Properties',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
-    description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000.',
+    description: 'Leading Zambian real estate development company specializing in titled residential plots, construction services, and property consultancy. We offer premium plots in strategic locations with flexible payment plans and comprehensive real estate solutions.',
     images: ['/images/logoo.png'],
     creator: '@calmmountainprop',
   },
@@ -89,7 +89,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
               "name": "Calm Mountain Properties",
-              "description": "Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola with flexible payment plans from K20,000. Professional property development, title deed processing, and construction services.",
+              "description": "Leading Zambian real estate development company specializing in titled residential plots, construction services, and property consultancy. We offer premium plots in strategic locations across Kabwe, Kitwe, and Ndola with flexible payment plans. Our experienced team provides comprehensive real estate solutions including title processing, construction supervision, property management, and land surveying. With a proven track record of excellence and commitment to quality, we are your trusted partner for real estate investment and development in Zambia.",
               "url": "https://calmmountainproperties.com",
               "telephone": "+260 761 370 566",
               "email": "info@calmmountainproperties.com",

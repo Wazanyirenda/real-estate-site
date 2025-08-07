@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: 'Construction Companies in Zambia - Professional Construction Services',
     description: 'Leading construction company in Zambia offering professional construction services, project management, and construction supervision.',
     url: 'https://calmmountainproperties.com/construction',
-    images: ['/images/logoo.png'],
+    images: [
+      {
+        url: '/images/logoo.png',
+        width: 1200,
+        height: 1200,
+        alt: 'Calm Mountain Properties Logo - Construction Services',
+        type: 'image/png',
+      },
+    ],
   },
   alternates: {
     canonical: '/construction',

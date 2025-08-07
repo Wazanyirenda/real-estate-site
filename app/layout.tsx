@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     siteName: 'Calm Mountain Properties',
     images: [
       {
-        url: '/og-logo.svg',
+        url: '/images/logoo.png',
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: 'Calm Mountain Properties Logo - Premium Real Estate in Zambia',
-        type: 'image/svg+xml',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
     description: 'Leading Zambian real estate company offering titled residential plots in Kabwe, Kitwe, and Ndola. Flexible payment plans from K20,000.',
-    images: ['/og-logo.svg'],
+    images: ['/images/logoo.png'],
     creator: '@calmmountainprop',
   },
   robots: {

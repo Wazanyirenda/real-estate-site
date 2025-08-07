@@ -14,8 +14,8 @@ export default function ProjectsGrid() {
   const projects = [
     {
       id: 'residential-double-storey',
-      title: 'Residential House Double Storey',
-      location: 'Ndola, Chichele near the airport',
+      title: 'Double Storey Residential House',
+      location: 'Ndola, New Airport Chichele',
       status: 'Completed',
       description: 'A modern double storey residential house featuring contemporary design, premium finishes, and spacious living areas.',
       images,

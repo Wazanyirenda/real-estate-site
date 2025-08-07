@@ -30,7 +30,7 @@ export default function CompanyOverview() {
             <div>
               <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Our Mission</h3>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Our main goal is to provide easy access to land for the Zambian people and ensure the proper management of properties in the country. As the sun arcs across the savannah, we stand sentinel, guardians of dreams, stewards of prosperity, making land ownership accessible to every family.
+                Our main goal is to empower Zambians with secure land ownership and to support the sustainable development of communities across the country. We are dedicated to making property ownership accessible, providing expert guidance, and delivering comprehensive real estate solutions that create lasting value for individuals, families, and businesses.
               </p>
               
               <div className="space-y-4">

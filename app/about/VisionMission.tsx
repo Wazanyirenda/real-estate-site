@@ -21,7 +21,7 @@ export default function VisionMission() {
             </div>
             <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
             <p className="text-lg leading-relaxed">
-              To bridge sky and earth, granting Zambians keys to their own patches of land. We stand as guardians of dreams and stewards of prosperity, providing comprehensive real estate services where deeds meet destiny, and where land becomes legacy for future generations.
+              To be Zambia's leading real estate development company, empowering individuals and families to achieve their dreams of land ownership. We provide comprehensive real estate solutions that create lasting value and contribute to the sustainable development of communities across Zambia.
             </p>
           </div>
         </div>

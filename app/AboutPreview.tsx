@@ -42,8 +42,8 @@ export default function AboutPreview() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <img
-              src="/images/about-team.jpg"
-              alt="About Calm Mountain"
+              src="/images/peview-png.png"
+              alt="Calm Mountain overview"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
            

@@ -63,8 +63,8 @@ export default function CompanyOverview() {
             
             <div className="relative">
               <img 
-                src="/images/about-team.jpg" 
-                alt="Calm Mountain Properties Team"
+                src="/images/about-png.png" 
+                alt="About Calm Mountain"
                 className="rounded-lg shadow-lg w-full h-auto object-cover"
               />
             </div>

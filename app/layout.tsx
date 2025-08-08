@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-      openGraph: {
-      title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
+  openGraph: {
+    title: 'Calm Mountain Properties - Premium Real Estate in Zambia',
       description: 'Leading Zambian real estate development company specializing in titled residential plots, construction services, and property consultancy. We offer premium plots in strategic locations across Kabwe, Kitwe, and Ndola with flexible payment plans. Our experienced team provides comprehensive real estate solutions with a proven track record of excellence.',
-      url: 'https://calmmountainproperties.com',
+    url: 'https://calmmountainproperties.com',
     siteName: 'Calm Mountain Properties',
     images: [
       {

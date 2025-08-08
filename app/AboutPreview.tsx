@@ -15,10 +15,13 @@ export default function AboutPreview() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <h2 className="text-4xl font-bold text-[#0a192f] mb-6">
-              Your Trusted Partner in Land Ownership
+              About Calm Mountain
             </h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Calm Mountain Properties makes it easy to own land with confidence. We handle everything from secure plot sales and title processing to surveying and project management so you can invest with peace of mind.
+            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+              Founded in 2022, Calm Mountain is a property developer and real estate agency headquartered in Ndola with branches in Kitwe and Kabwe.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              We provide end-to-end real estate services across Zambia, including property sales, sales consultancy, property management, land title processing, construction, and plot sales.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Ready to take the next step?
@@ -38,13 +41,12 @@ export default function AboutPreview() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            {/* TODO: Replace with professional photo of Calm Mountain Properties team or office building */}
             <img
               src="/images/about-team.jpg"
-              alt="About Calm Mountain Properties"
+              alt="About Calm Mountain"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />
-            {/* Removed: Years Experience badge */}
+           
           </motion.div>
         </div>
       </div>

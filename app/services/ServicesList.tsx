@@ -5,40 +5,40 @@ import { motion } from 'framer-motion';
 export default function ServicesList() {
   const services = [
     {
+      icon: 'ri-home-line',
+      title: 'Property Sales',
+      description: 'Facilitating the buying and selling of residential, commercial, and farm properties. We connect buyers with their ideal properties and help sellers achieve the best value.',
+      features: ['Residential Properties', 'Commercial Real Estate', 'Agricultural Land', 'Professional Valuation']
+    },
+    {
       icon: 'ri-map-pin-2-line',
       title: 'Plot Sales',
-      description: 'Premium serviced plots in prime locations with proper documentation and utilities. We offer flexible payment plans to make land ownership accessible.',
-      features: ['Titled & Beaconed Plots', 'Flexible Payment Plans', 'Prime Locations', 'Legal Documentation']
+      description: 'Selling individual plots of land in prime locations across Zambia. All plots come with proper documentation and flexible payment options.',
+      features: ['Titled Plots', 'Prime Locations', 'Flexible Payment Plans', 'Infrastructure Ready']
     },
     {
-      icon: 'ri-community-line',
-      title: 'Estate Planning',
-      description: 'Comprehensive estate development and planning services for residential communities. From concept to completion, we handle every detail.',
-      features: ['Master Planning', 'Infrastructure Development', 'Community Design', 'Regulatory Compliance']
-    },
-    {
-      icon: 'ri-file-shield-2-line',
-      title: 'Title Processing',
-      description: 'Professional title deed processing and legal documentation services. We ensure all legal requirements are met for secure property ownership.',
-      features: ['Legal Documentation', 'Title Deed Processing', 'Regulatory Compliance', 'Legal Verification']
-    },
-    {
-      icon: 'ri-hammer-line',
-      title: 'Construction Supervision',
-      description: 'Expert project management and construction supervision services. We oversee every aspect of your construction project.',
-      features: ['Project Management', 'Quality Control', 'Timeline Management', 'Cost Monitoring']
-    },
-    {
-      icon: 'ri-ruler-2-line',
-      title: 'Land Surveying',
-      description: 'Accurate land surveying and mapping services for property development. Professional surveying ensures precise plot boundaries.',
-      features: ['Boundary Surveying', 'Topographic Mapping', 'GPS Technology', 'Survey Reports']
+      icon: 'ri-user-voice-line',
+      title: 'Sales Consultancy',
+      description: 'Providing expert advice and guidance related to property sales. Our consultants help you make informed decisions about your real estate investments.',
+      features: ['Market Analysis', 'Investment Advisory', 'Negotiation Support', 'Legal Guidance']
     },
     {
       icon: 'ri-home-gear-line',
       title: 'Property Management',
-      description: 'Comprehensive property management services for investors and property owners. We handle maintenance, tenant relations, and more.',
+      description: 'Overseeing and managing properties on behalf of owners. We ensure your property maintains its value while generating optimal returns.',
       features: ['Tenant Management', 'Maintenance Services', 'Rent Collection', 'Property Inspections']
+    },
+    {
+      icon: 'ri-file-shield-2-line',
+      title: 'Land Title Processing',
+      description: 'Handling all legal procedures and documentation for land ownership. We ensure smooth and legitimate transfer of property rights.',
+      features: ['Title Deed Processing', 'Legal Documentation', 'Government Liaison', 'Verification Services']
+    },
+    {
+      icon: 'ri-building-2-line',
+      title: 'Construction',
+      description: 'Engaging in building and development activities. From residential homes to commercial complexes, we bring your vision to life.',
+      features: ['Project Management', 'Quality Construction', 'Timely Delivery', 'Cost-Effective Solutions']
     }
   ];
 

@@ -11,7 +11,7 @@ export default function VisionMission() {
             </div>
             <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
             <p className="text-lg leading-relaxed">
-              To be the compass for wanderers and the architect of aspirations across Zambia. We envision a future where every Zambian family has access to their own patch of land, creating sustainable communities where dreams take root and prosperity flourishes for generations.
+              To become the leading property developer and facilitate easy access to land for the Zambian people.
             </p>
           </div>
           
@@ -21,7 +21,7 @@ export default function VisionMission() {
             </div>
             <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
             <p className="text-lg leading-relaxed">
-              To be Zambia's leading real estate development company, empowering individuals and families to achieve their dreams of land ownership. We provide comprehensive real estate solutions that create lasting value and contribute to the sustainable development of communities across Zambia.
+              To provide top-notch real estate services and ensure proper management of properties in the country.
             </p>
           </div>
         </div>

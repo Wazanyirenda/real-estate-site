@@ -5,8 +5,9 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import AboutHero from './AboutHero';
 import CompanyOverview from './CompanyOverview';
-import WhyChooseUs from './WhyChooseUs';
 import VisionMission from './VisionMission';
+import CoreValues from './CoreValues';
+import WhyChooseUs from './WhyChooseUs';
 
 export default function AboutPage() {
   return (
@@ -15,8 +16,9 @@ export default function AboutPage() {
       <main>
         <AboutHero />
         <CompanyOverview />
-        <WhyChooseUs />
         <VisionMission />
+        <CoreValues />
+        <WhyChooseUs />
       </main>
       <Footer />
       <WhatsAppButton />

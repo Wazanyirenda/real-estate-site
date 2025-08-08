@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import ServicesHero from './ServicesHero';
 import ServicesList from './ServicesList';
+import OurClients from './OurClients';
 import ProcessSection from './ProcessSection';
 import ServicesCTA from './ServicesCTA';
 
@@ -15,6 +16,7 @@ export default function ServicesPage() {
       <main>
         <ServicesHero />
         <ServicesList />
+        <OurClients />
         <ProcessSection />
         <ServicesCTA />
       </main>

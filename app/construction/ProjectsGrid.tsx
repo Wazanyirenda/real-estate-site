@@ -67,14 +67,14 @@ export default function ProjectsGrid() {
                 {showDetails && (
                   <>
                     <p className="text-gray-600 mb-6 text-lg leading-relaxed">{project.description}</p>
-                    <div className="grid grid-cols-2 gap-2 mb-6">
-                      {project.features.map((feature, index) => (
-                        <div key={index} className="flex items-center text-sm text-gray-700">
-                          <i className="ri-check-line text-[#f7b733] mr-2"></i>
-                          {feature}
-                        </div>
-                      ))}
+                <div className="grid grid-cols-2 gap-2 mb-6">
+                  {project.features.map((feature, index) => (
+                    <div key={index} className="flex items-center text-sm text-gray-700">
+                      <i className="ri-check-line text-[#f7b733] mr-2"></i>
+                      {feature}
                     </div>
+                  ))}
+                </div>
                     {/* Gallery of the rest of the images */}
                     <div className="flex gap-2 overflow-x-auto mb-6 scrollbar-thin scrollbar-thumb-[#f7b733]/60 scrollbar-track-gray-200">
                       {project.images.slice(1).map((img, idx) => (

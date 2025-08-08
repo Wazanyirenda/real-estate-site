@@ -13,6 +13,15 @@ export default function ServicesHero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
+          {/* <motion.p 
+            className="text-lg text-[#f7b733] font-semibold mb-4 uppercase tracking-wider"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            First in Class Real Estate Service Provider
+          </motion.p> */}
           <motion.h1 
             className="text-5xl md:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +38,7 @@ export default function ServicesHero() {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            From plot sales to construction supervision, we handle every aspect of your property journey with expertise and care.
+            From property sales to construction, we provide top-notch real estate services to individuals and businesses across Zambia and beyond.
           </motion.p>
         </motion.div>
       </div>

@@ -3,34 +3,34 @@
 export default function WhyChooseUs() {
   const reasons = [
     {
-      icon: 'ri-shield-check-line',
-      title: 'Guaranteed Title Deeds',
-      description: 'No surprises. Every plot comes with completed title deed documentation and legal clearance before you pay the final amount.'
+      icon: 'ri-award-line',
+      title: 'High-Quality Products & Services',
+      description: 'We provide high-quality products and services backed by multifaceted expertise in real estate and property development.'
     },
     {
-      icon: 'ri-map-pin-line',
-      title: 'Prime Growth Areas',
-      description: 'We only develop in Zambia\'s fastest-growing cities near airports and major roads. Your investment grows with the city.',
+      icon: 'ri-file-check-line',
+      title: 'Diligent Service Execution',
+      description: 'We serve our clients diligently and ensure thorough execution of all services, from initial consultation to final delivery.'
     },
     {
-      icon: 'ri-customer-service-line',
-      title: '24/7 Customer Support',
-      description: 'Real people, real support. Our team guides you from first visit to key handover. Never deal with automated systems.',
+      icon: 'ri-team-line',
+      title: 'Reliable Partnership',
+      description: 'We guarantee a partnership with a reliable real estate agency and property developer you can trust for your investments.'
     },
     {
-      icon: 'ri-tools-line',
-      title: 'Everything Under One Roof',
-      description: 'Surveying, documentation, construction planning. We handle it all so you don\'t have to chase multiple companies.',
+      icon: 'ri-map-pin-2-line',
+      title: 'Strategic Locations',
+      description: 'Properties in prime locations across Ndola, Kitwe, and Kabwe with excellent growth potential and infrastructure.'
     },
     {
-      icon: 'ri-price-tag-line',
-      title: 'Flexible Payment Options',
-      description: 'Enjoy flexible payment plans tailored to your needs, making land ownership accessible and stress-free.'
+      icon: 'ri-scales-line',
+      title: 'Complete Legal Support',
+      description: 'Full legal support for land title processing and documentation, ensuring secure and legitimate property ownership.'
     },
     {
-      icon: 'ri-building-line',
-      title: 'Ready-to-Build Infrastructure',
-      description: 'Access roads, water connections, and electricity lines already in place. Start building immediately after purchase.'
+      icon: 'ri-user-heart-line',
+      title: 'Customer-First Approach',
+      description: 'Our commitment to customer satisfaction drives every decision we make, ensuring personalized service for each client.'
     }
   ];
 
@@ -38,9 +38,9 @@ export default function WhyChooseUs() {
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">What Makes Us Different</h2>
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Our Commitment to You</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Unlike other developers, we put your peace of mind first. Here's what every client gets when they choose us:
+            Calm Mountain Property Developers is committed to excellence in every aspect of our service delivery:
           </p>
         </div>
         

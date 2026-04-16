@@ -1,6 +1,27 @@
 import { supabase, type ListingItem } from '@/lib/supabase';
 import EstateDetail from './EstateDetail';
 
+export async function generateStaticParams() {
+  try {
+    const { data, error } = await supabase
+      .from('real_estate_listings')
+      .select('slug')
+      .eq('active', true)
+      .eq('published', true);
+
+    if (error || !data) {
+      return [];
+    }
+
+    return data
+      .map((item) => item.slug)
+      .filter((slug): slug is string => typeof slug === 'string' && slug.length > 0)
+      .map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
+}
+
 export default async function ListingPage({ params }: { params: { slug: string } }) {
   const resolvedSlug = params.slug;
 

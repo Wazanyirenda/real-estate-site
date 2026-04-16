@@ -1,11 +1,54 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight } from 'phosphor-react';
+
+/* Two-line hamburger that morphs into an X */
+const MenuIcon = ({ open }: { open: boolean }) => (
+  <div className="w-6 h-4 flex flex-col justify-between relative" aria-hidden="true">
+    <motion.span
+      className="block h-[2px] bg-current rounded-full origin-center"
+      animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+      transition={{ duration: 0.25, ease: 'easeInOut' }}
+    />
+    <motion.span
+      className="block h-[2px] bg-current rounded-full origin-center"
+      animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+      transition={{ duration: 0.25, ease: 'easeInOut' }}
+    />
+  </div>
+);
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+  const transparentMode = isHome && !scrolled;
+
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 40);
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  /* Close menu on route change */
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -13,77 +56,135 @@ export default function Header() {
     { name: 'Services', href: '/services' },
     { name: 'Listings', href: '/listings' },
     { name: 'Construction', href: '/construction' },
-    { name: 'Team', href: '/team' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
-    <header className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        transparentMode ? 'bg-transparent shadow-none' : 'bg-white shadow-md'
+      }`}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-24">
-          <Link href="/" className="flex items-center">
-            {/* TODO: Replace with Calm Mountain Properties logo image - should be horizontal logo with company name */}
-            <img 
-              src="/images/logoo.png" 
-              alt="Calm Mountain Properties Logo" 
-              className="h-24 w-auto"
+        <div
+          className={`flex justify-between items-center transition-all duration-300 ${
+            transparentMode ? 'h-24' : 'h-20'
+          }`}
+        >
+          {/* Logo */}
+          <Link href="/" className="flex items-center shrink-0">
+            <img
+              src="/images/logoo.png"
+              alt="Calm Mountain Properties Logo"
+              className={`w-auto transition-all duration-300 ${
+                transparentMode ? 'h-20 brightness-0 invert' : 'h-16'
+              }`}
             />
-            {/* Removed fallback text - space preserved for logo image */}
           </Link>
 
+          {/* Desktop nav */}
           <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-[#0a192f] hover:text-[#f7b733] font-medium transition-colors duration-200 cursor-pointer"
-              >
-                {item.name}
-              </Link>
+              <div key={item.name} className="relative group">
+                <Link
+                  href={item.href}
+                  className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                    transparentMode
+                      ? 'text-white hover:text-[#f7b733]'
+                      : 'text-[#0a192f] hover:text-[#0a192f]'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+                <span
+                  aria-hidden="true"
+                  className={`absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full ${
+                    transparentMode ? 'bg-[#f7b733]' : 'bg-[#0a192f]'
+                  }`}
+                />
+              </div>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center">
             <Link
               href="/contact"
-              className="bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer whitespace-nowrap"
+              className={`px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
+                transparentMode
+                  ? 'bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f]'
+                  : 'bg-[#0a192f] hover:bg-black text-white'
+              }`}
             >
               Get Started
             </Link>
           </div>
 
+          {/* Mobile toggle */}
           <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`md:hidden p-2 transition-colors ${
+              transparentMode ? 'text-white' : 'text-[#0a192f]'
+            }`}
+            onClick={() => setIsMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
           >
-            <i className={`ri-${isMenuOpen ? 'close' : 'menu'}-line text-2xl text-[#0a192f]`}></i>
+            <MenuIcon open={isMenuOpen} />
           </button>
         </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="py-4 space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block text-[#0a192f] hover:text-[#f7b733] font-medium transition-colors duration-200 cursor-pointer"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                href="/contact"
-                className="block bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] px-6 py-2 rounded-lg font-semibold transition-all duration-300 text-center cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile menu - dark navy, slides down */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden bg-[#0a192f] overflow-hidden"
+          >
+            <nav className="container mx-auto px-6 pt-2 pb-6 flex flex-col">
+              {navigation.map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04, duration: 0.25, ease: 'easeOut' }}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`flex items-center justify-between py-4 text-base font-medium tracking-wide border-b border-white/10 last:border-0 transition-colors ${
+                      pathname === item.href
+                        ? 'text-[#f7b733]'
+                        : 'text-white hover:text-[#f7b733]'
+                    }`}
+                  >
+                    {item.name}
+                    <ArrowRight size={14} weight="bold" className="opacity-40" />
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navigation.length * 0.04 + 0.05, duration: 0.25 }}
+                className="mt-5"
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] py-4 font-bold text-center uppercase tracking-wider text-sm transition-colors"
+                >
+                  Get Started
+                </Link>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

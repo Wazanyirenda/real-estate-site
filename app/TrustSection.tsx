@@ -1,26 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ClockCounterClockwise, Eye, MapPin, ShieldCheck } from 'phosphor-react';
 
 export default function TrustSection() {
   const trustPoints = [
     {
-      icon: 'ri-shield-check-fill',
+      icon: ShieldCheck,
       title: 'Legal Compliance',
       description: 'All properties come with proper title deeds and legal documentation verified by our legal team.'
     },
     {
-      icon: 'ri-eye-fill',
+      icon: Eye,
       title: 'Transparent Pricing',
       description: 'No hidden fees or surprise costs. What you see is what you pay with our clear pricing structure.'
     },
     {
-      icon: 'ri-map-pin-fill',
+      icon: MapPin,
       title: 'Prime Locations',
       description: 'Strategic locations near airports, shopping centers, and major roads for maximum investment value.'
     },
     {
-      icon: 'ri-time-fill',
+      icon: ClockCounterClockwise,
       title: 'Proven Track Record',
       description: 'Years of successful property development and satisfied clients across Kabwe, Kitwe, and Ndola.'
     }
@@ -30,35 +31,36 @@ export default function TrustSection() {
     <section className="py-20 bg-[#0a192f]">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">Why Clients Trust Us</p>
+          <h2 className="text-4xl font-bold text-white mb-4 max-w-3xl">
             Why Choose Calm Mountain?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl">
             We believe in clear pricing, legal security, and honest service. Our clients trust us because we deliver on our promises every time.
           </p>
         </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {trustPoints.map((point, index) => (
-            <motion.div 
+            <motion.div
               key={index} 
-              className="text-center"
+              className="bg-white/5 border border-white/10 p-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="w-16 h-16 bg-[#f7b733] rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className={`${point.icon} text-2xl text-white`}></i>
+              <div className="w-14 h-14 bg-[#f7b733]/15 flex items-center justify-center mb-6">
+                <point.icon size={24} weight="fill" className="text-[#f7b733]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{point.description}</p>
+              <h3 className="text-xl font-bold text-white mb-4 uppercase leading-tight">{point.title}</h3>
+              <p className="text-gray-300 leading-relaxed text-sm">{point.description}</p>
             </motion.div>
           ))}
         </div>

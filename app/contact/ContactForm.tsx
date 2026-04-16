@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { CaretDown } from 'phosphor-react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,16 +16,12 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('');
@@ -78,14 +75,16 @@ export default function ContactForm() {
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Send Us a Message</h2>
-            <p className="text-xl text-gray-600">
+          <div className="mb-12">
+            <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Send a Message</p>
+            <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Tell Us What You Need</h2>
+            <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+            <p className="text-lg text-gray-600">
               Fill out the form below and we'll get back to you as soon as possible
             </p>
           </div>
           
-          <form id="contact-form" onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
+          <form id="contact-form" onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-gray-100">
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -95,7 +94,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#f7b733] transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors"
                 />
               </div>
               <div>
@@ -106,7 +105,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#f7b733] transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors"
                 />
               </div>
             </div>
@@ -120,39 +119,25 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#f7b733] transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
                 <div className="relative">
-                  <button 
-                    type="button"
-                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left cursor-pointer hover:border-[#f7b733] transition-colors pr-8"
-                    onClick={() => {
-                      const dropdown = document.getElementById('subject-dropdown');
-                      dropdown?.classList.toggle('hidden');
-                    }}
+                  <select
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
                   >
-                    {formData.subject || 'Select Subject'}
-                    <i className="ri-arrow-down-s-line absolute right-3 top-1/2 transform -translate-y-1/2"></i>
-                  </button>
-                  <div id="subject-dropdown" className="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg">
-                    <div className="py-2">
-                      {['General Inquiry', 'Plot Purchase', 'Site Visit Request', 'Title Processing', 'Construction Services', 'Other'].map(subject => (
-                        <div 
-                          key={subject}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          onClick={() => {
-                            handleSelectChange('subject', subject);
-                            document.getElementById('subject-dropdown')?.classList.add('hidden');
-                          }}
-                        >
-                          {subject}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                    <option value="">Select Subject</option>
+                    {['General Inquiry', 'Plot Purchase', 'Site Visit Request', 'Title Processing', 'Construction Services', 'Other'].map(subject => (
+                      <option key={subject} value={subject}>{subject}</option>
+                    ))}
+                  </select>
+                  <CaretDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>
               </div>
             </div>
@@ -161,65 +146,37 @@ export default function ContactForm() {
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Interested Estate</label>
                 <div className="relative">
-                  <button 
-                    type="button"
-                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left cursor-pointer hover:border-[#f7b733] transition-colors pr-8"
-                    onClick={() => {
-                      const dropdown = document.getElementById('estate-dropdown');
-                      dropdown?.classList.toggle('hidden');
-                    }}
+                  <select
+                    name="estate"
+                    value={formData.estate}
+                    onChange={handleChange}
+                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
                   >
-                    {formData.estate || 'Select Estate'}
-                    <i className="ri-arrow-down-s-line absolute right-3 top-1/2 transform -translate-y-1/2"></i>
-                  </button>
-                  <div id="estate-dropdown" className="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg">
-                    <div className="py-2">
-                      {['', 'Great North Estate - Kabwe', 'Paramount Estate - Kitwe', 'Dreamscape Housing - Ndola', 'Fatima Estate - Ndola'].map(estate => (
-                        <div 
-                          key={estate}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          onClick={() => {
-                            handleSelectChange('estate', estate);
-                            document.getElementById('estate-dropdown')?.classList.add('hidden');
-                          }}
-                        >
-                          {estate || 'Not Sure Yet'}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                    <option value="">Not Sure Yet</option>
+                    <option value="Great North Estate - Kabwe">Great North Estate - Kabwe</option>
+                    <option value="Paramount Estate - Kitwe">Paramount Estate - Kitwe</option>
+                    <option value="Dreamscape Housing - Ndola">Dreamscape Housing - Ndola</option>
+                    <option value="Fatima Estate - Ndola">Fatima Estate - Ndola</option>
+                  </select>
+                  <CaretDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Plot Size</label>
                 <div className="relative">
-                  <button 
-                    type="button"
-                    className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-left cursor-pointer hover:border-[#f7b733] transition-colors pr-8"
-                    onClick={() => {
-                      const dropdown = document.getElementById('plotsize-dropdown');
-                      dropdown?.classList.toggle('hidden');
-                    }}
+                  <select
+                    name="plotSize"
+                    value={formData.plotSize}
+                    onChange={handleChange}
+                    className="w-full appearance-none bg-white border border-gray-300 px-4 py-3 pr-10 focus:outline-none focus:border-[#0a192f] transition-colors"
                   >
-                    {formData.plotSize || 'Select Plot Size'}
-                    <i className="ri-arrow-down-s-line absolute right-3 top-1/2 transform -translate-y-1/2"></i>
-                  </button>
-                  <div id="plotsize-dropdown" className="hidden absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-lg">
-                    <div className="py-2">
-                      {['', '30x20', '32x25', '40x20', '40x30'].map(size => (
-                        <div 
-                          key={size}
-                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                          onClick={() => {
-                            handleSelectChange('plotSize', size);
-                            document.getElementById('plotsize-dropdown')?.classList.add('hidden');
-                          }}
-                        >
-                          {size || 'Not Sure Yet'}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                    <option value="">Not Sure Yet</option>
+                    <option value="30x20">30x20</option>
+                    <option value="32x25">32x25</option>
+                    <option value="40x20">40x20</option>
+                    <option value="40x30">40x30</option>
+                  </select>
+                  <CaretDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 </div>
               </div>
             </div>
@@ -233,7 +190,7 @@ export default function ContactForm() {
                 required
                 maxLength={500}
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#f7b733] transition-colors resize-none"
+                className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-[#0a192f] transition-colors resize-none"
                 placeholder="Tell us about your requirements, questions, or any specific needs..."
               />
               <div className="text-right text-sm text-gray-500 mt-1">
@@ -242,7 +199,7 @@ export default function ContactForm() {
             </div>
 
             {submitStatus && (
-              <div className={`mb-6 p-4 rounded-lg ${submitStatus.includes('error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+              <div className={`mb-6 p-4 ${submitStatus.includes('error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
                 {submitStatus}
               </div>
             )}
@@ -250,7 +207,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-[#f7b733] text-white px-8 py-4 rounded-lg hover:bg-[#e6a82d] transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+              className="w-full bg-[#0a192f] text-white px-8 py-4 hover:bg-black transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap font-semibold uppercase tracking-[0.18em] text-sm"
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>

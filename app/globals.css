@@ -1,9 +1,9 @@
+/* Add professional font (must come before other @rules for PostCSS) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Add professional font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -18,6 +18,14 @@ body {
 
 main {
   flex: 1;
+}
+
+/* Prevent initial mobile horizontal scroll from offscreen Framer Motion translate-x. */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .container {

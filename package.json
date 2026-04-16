@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
+    "@supabase/supabase-js": "^2.103.2",
     "framer-motion": "^12.23.12",
-    "next": "15.3.2",
+    "next": "^16.2.4",
+    "phosphor-react": "^1.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^3.0.2",

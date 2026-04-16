@@ -2,52 +2,60 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'phosphor-react';
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-[#0a192f] text-white">
-      <div className="container mx-auto px-4 text-center">
-        <motion.h2 
-          className="text-4xl font-bold mb-6"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          Ready to Start Your Land Ownership Journey?
-        </motion.h2>
-        <motion.p 
-          className="text-xl mb-8 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          Our team is here to answer your questions and guide you every step of the way.
-        </motion.p>
-        
-        <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <Link 
-            href="/listings" 
-            className="bg-[#f7b733] hover:bg-[#e6a625] text-[#0a192f] px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer whitespace-nowrap"
+    <section className="flex flex-col lg:flex-row">
+      <motion.div
+        className="lg:w-3/5 px-10 py-24 md:px-20 flex flex-col justify-center bg-[#f7b733]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <p className="font-bold text-xs uppercase tracking-[0.3em] text-black/50 mb-6">Start Here</p>
+        <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight mb-6">
+          Ready to Start Your
+          <br />
+          Property Journey?
+        </h2>
+        <p className="text-black/70 text-base mb-10 max-w-xl leading-relaxed">
+          Whether you are buying your first plot, evaluating a housing opportunity, or planning a long-term property investment, our team can guide the next step.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/listings"
+            className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#f7b733] transition-all duration-300"
           >
-            Browse Properties
+            Browse Listings
+            <ArrowRight size={16} weight="bold" />
           </Link>
-          
-          <Link 
-            href="/contact" 
-            className="border-2 border-white text-white hover:bg-white hover:text-[#0a192f] px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap"
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#0a192f] transition-all duration-300"
           >
             Get In Touch
           </Link>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-[#0a192f] relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.15 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <img
+          src="/images/estates/paramount-estate.jpeg"
+          alt="Calm Mountain property"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-white/15 text-7xl font-bold uppercase tracking-widest">CMP</div>
+        </div>
+      </motion.div>
     </section>
   );
 }

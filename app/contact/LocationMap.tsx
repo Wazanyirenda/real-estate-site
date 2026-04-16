@@ -1,36 +1,40 @@
 'use client';
 
+import { Bus, Car, Clock, MapPinLine, Phone } from 'phosphor-react';
+
 export default function LocationMap() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-6">Find Us</h2>
-          <p className="text-xl text-gray-600">
+        <div className="mb-12">
+          <p className="text-[#0a192f]/50 font-bold text-xs uppercase tracking-[0.3em] mb-4">Location</p>
+          <h2 className="text-4xl font-bold text-[#0a192f] uppercase mb-4">Find Us</h2>
+          <div className="w-12 h-0.5 bg-[#f7b733] mb-4" />
+          <p className="text-lg text-gray-600">
             Visit our main office in Ndola or contact us to arrange a meeting
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="bg-[#f5f5f5] p-8 rounded-lg">
+          <div className="bg-[#f5f5f5] p-8 border border-gray-100">
             <h3 className="text-2xl font-bold text-[#0a192f] mb-6">Main Office Location</h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <i className="ri-map-pin-line text-[#f7b733] text-xl mr-4 mt-1"></i>
+                <MapPinLine size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-[#0a192f] mb-1">Address</h4>
                   <p className="text-gray-700">No. 7 Chinika Road, Northrise<br/>Ndola, Zambia</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <i className="ri-phone-line text-[#f7b733] text-xl mr-4 mt-1"></i>
+                <Phone size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-[#0a192f] mb-1">Phone</h4>
                   <p className="text-gray-700">+260 761 370 566</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <i className="ri-time-line text-[#f7b733] text-xl mr-4 mt-1"></i>
+                <Clock size={20} weight="fill" className="text-[#0a192f] mr-4 mt-1 shrink-0" />
                 <div>
                   <h4 className="font-semibold text-[#0a192f] mb-1">Business Hours</h4>
                   <p className="text-gray-700">
@@ -46,16 +50,16 @@ export default function LocationMap() {
               <h4 className="font-semibold text-[#0a192f] mb-4">How to Get There</h4>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
-                  <i className="ri-car-line text-[#f7b733] mr-3"></i>
+                  <Car size={16} weight="fill" className="text-[#0a192f] mr-3" />
                   Parking available on-site
                 </li>
                 <li className="flex items-center">
-                  <i className="ri-bus-line text-[#f7b733] mr-3"></i>
+                  <Bus size={16} weight="fill" className="text-[#0a192f] mr-3" />
                   Public transport accessible
                 </li>
                 <li className="flex items-center">
-                  <i className="ri-map-line text-[#f7b733] mr-3"></i>
-                  <a href="https://maps.app.goo.gl/ARU2uudKDacEDi6F7" target="_blank" rel="noopener noreferrer" className="text-[#f7b733] hover:underline">
+                  <MapPinLine size={16} weight="fill" className="text-[#0a192f] mr-3" />
+                  <a href="https://maps.app.goo.gl/ARU2uudKDacEDi6F7" target="_blank" rel="noopener noreferrer" className="text-[#0a192f] hover:underline font-semibold">
                     View on Google Maps
                   </a>
                 </li>

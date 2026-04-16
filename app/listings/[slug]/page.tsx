@@ -1,15 +1,24 @@
+import { supabase, type ListingItem } from '@/lib/supabase';
 import EstateDetail from './EstateDetail';
 
-export async function generateStaticParams() {
-  return [
-    { slug: 'great-north-estate' },
-    { slug: 'paramount-estate' },
-    { slug: 'dreamscape-housing' },
-    { slug: 'fatima-estate' },
-  ];
-}
+export default async function ListingPage({ params }: { params: { slug: string } }) {
+  const resolvedSlug = params.slug;
 
-export default async function EstatePage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  return <EstateDetail estateSlug={resolvedParams.slug} />;
+  const { data, error } = await supabase
+    .from('real_estate_listings')
+    .select('*')
+    .eq('slug', resolvedSlug)
+    .maybeSingle<ListingItem>();
+
+  if (error || !data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-white border border-gray-100 rounded-xl p-6 text-center">
+          Listing not found.
+        </div>
+      </div>
+    );
+  }
+
+  return <EstateDetail listing={data} />;
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Quotes, Star } from 'phosphor-react';
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -31,16 +32,17 @@ export default function TestimonialsSection() {
     <section className="py-20 bg-[#f5f5f5]">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16"
+          className="mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h2 className="text-4xl font-bold text-[#0a192f] mb-4">
+          <p className="text-[#f7b733] font-bold text-xs uppercase tracking-[0.3em] mb-4">Client Stories</p>
+          <h2 className="text-4xl font-bold text-[#0a192f] mb-4 max-w-3xl">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl">
             Real stories from real people who found their perfect plot and peace of mind with Calm Mountain Properties.
           </p>
         </motion.div>
@@ -49,15 +51,16 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div 
               key={index} 
-              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white border border-gray-100 p-8 shadow-lg hover:shadow-xl transition-shadow"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
             >
+              <Quotes size={28} weight="fill" className="text-[#f7b733] mb-5" />
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <i key={i} className="ri-star-fill text-[#f7b733] text-lg"></i>
+                  <Star key={i} size={18} weight="fill" className="text-[#f7b733]" />
                 ))}
               </div>
               

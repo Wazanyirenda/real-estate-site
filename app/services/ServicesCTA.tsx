@@ -1,24 +1,62 @@
 'use client';
 
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'phosphor-react';
 
 export default function ServicesCTA() {
   return (
-    <section className="py-20 bg-[#0a192f]">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-        <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Contact us today to discuss your property needs and discover how we can help you achieve your real estate goals.
+    <section className="flex flex-col lg:flex-row">
+      <motion.div
+        className="lg:w-3/5 px-10 py-24 md:px-20 flex flex-col justify-center bg-[#f7b733]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <p className="font-bold text-xs uppercase tracking-[0.3em] text-black/50 mb-6">
+          Take the Next Step
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact" className="bg-[#f7b733] text-white px-8 py-4 rounded-lg hover:bg-[#e6a82d] transition-colors cursor-pointer whitespace-nowrap">
+        <h2 className="text-4xl md:text-5xl font-bold text-black uppercase leading-tight mb-6">
+          Ready to Get Started?
+        </h2>
+        <p className="text-black/70 text-base mb-10 max-w-xl leading-relaxed">
+          Contact us today to discuss your property needs and discover how we can help you achieve
+          your real estate goals, from consultation to handover.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 border border-black px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-black hover:text-[#f7b733] transition-all duration-300"
+          >
             Get Free Consultation
+            <ArrowRight size={16} weight="bold" />
           </Link>
-          <Link href="/listings" className="border-2 border-[#f7b733] text-[#f7b733] px-8 py-4 rounded-lg hover:bg-[#f7b733] hover:text-white transition-colors cursor-pointer whitespace-nowrap">
+          <Link
+            href="/listings"
+            className="inline-flex items-center justify-center bg-black text-white px-8 py-4 font-bold uppercase tracking-wider text-sm hover:bg-[#0a192f] transition-all duration-300"
+          >
             View Available Plots
           </Link>
         </div>
-      </div>
+      </motion.div>
+
+      <motion.div
+        className="lg:w-2/5 h-64 lg:h-auto overflow-hidden bg-[#0a192f] relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.15 }}
+        viewport={{ once: true, margin: '-100px' }}
+      >
+        <img
+          src="/images/estates/greatnorth-estate.png"
+          alt="Calm Mountain Properties services"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-white/10 text-7xl font-bold uppercase tracking-widest">CMP</div>
+        </div>
+      </motion.div>
     </section>
   );
 }

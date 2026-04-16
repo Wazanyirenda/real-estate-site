@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function TeamHero() {
   return (
     <section 
-      className="relative h-[50vh] flex items-center justify-center"
+      className="relative h-[100vh] margin-top-[60px] flex items-center justify-center"
       style={{
         backgroundImage: `linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('/images/team-hero.jpg')`,
         backgroundSize: 'cover',
